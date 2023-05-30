@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePointService;
+namespace Spryker\Zed\ServicePoint\Business\Validator\Rule\Service;
 
 use ArrayObject;
 use Generated\Shared\Transfer\ErrorCollectionTransfer;
@@ -15,7 +15,7 @@ use Generated\Shared\Transfer\ServicePointTransfer;
 use Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface;
 use Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface;
 
-class ServicePointUuidExistenceServicePointServiceValidatorRule implements ServicePointServiceValidatorRuleInterface
+class ServicePointUuidExistenceServiceValidatorRule implements ServiceValidatorRuleInterface
 {
     /**
      * @var string
@@ -45,16 +45,16 @@ class ServicePointUuidExistenceServicePointServiceValidatorRule implements Servi
     }
 
     /**
-     * @param \ArrayObject<array-key, \Generated\Shared\Transfer\ServicePointServiceTransfer> $servicePointServiceTransfers
+     * @param \ArrayObject<array-key, \Generated\Shared\Transfer\ServiceTransfer> $serviceTransfers
      *
      * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
      */
-    public function validate(ArrayObject $servicePointServiceTransfers): ErrorCollectionTransfer
+    public function validate(ArrayObject $serviceTransfers): ErrorCollectionTransfer
     {
         $errorCollectionTransfer = new ErrorCollectionTransfer();
 
-        foreach ($servicePointServiceTransfers as $entityIdentifier => $servicePointServiceTransfer) {
-            if (!$this->hasServicePointWithUuid($servicePointServiceTransfer->getServicePointOrFail())) {
+        foreach ($serviceTransfers as $entityIdentifier => $serviceTransfer) {
+            if (!$this->hasServicePointWithUuid($serviceTransfer->getServicePointOrFail())) {
                 $this->errorAdder->addError(
                     $errorCollectionTransfer,
                     $entityIdentifier,

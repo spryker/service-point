@@ -13,7 +13,7 @@ use Generated\Shared\Transfer\ServiceTypeConditionsTransfer;
 use Generated\Shared\Transfer\ServiceTypeCriteriaTransfer;
 use Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface;
 
-class ServicePointServiceServiceTypeExpander implements ServicePointServiceServiceTypeExpanderInterface
+class ServiceTypeExpander implements ServiceTypeExpanderInterface
 {
     /**
      * @var \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface
@@ -29,25 +29,25 @@ class ServicePointServiceServiceTypeExpander implements ServicePointServiceServi
     }
 
     /**
-     * @param \ArrayObject<array-key, \Generated\Shared\Transfer\ServicePointServiceTransfer> $servicePointServiceTransfers
+     * @param \ArrayObject<array-key, \Generated\Shared\Transfer\ServiceTransfer> $serviceTransfers
      *
-     * @return \ArrayObject<array-key, \Generated\Shared\Transfer\ServicePointServiceTransfer>
+     * @return \ArrayObject<array-key, \Generated\Shared\Transfer\ServiceTransfer>
      */
-    public function expandServicePointServiceTransfersWithServiceTypeRelations(
-        ArrayObject $servicePointServiceTransfers
+    public function expandServicesWithServiceTypes(
+        ArrayObject $serviceTransfers
     ): ArrayObject {
-        $serviceTypeUuids = $this->extractServiceTypeUuidsFromServicePointServiceTransfers($servicePointServiceTransfers);
+        $serviceTypeUuids = $this->extractServiceTypeUuidsFromServiceTransfers($serviceTransfers);
         $serviceTypeTransfersIndexedByUuids = $this->getServiceTypeTransfersIndexedByUuids($serviceTypeUuids);
 
-        foreach ($servicePointServiceTransfers as $servicePointServiceTransfer) {
-            $serviceTypeUuid = $servicePointServiceTransfer->getServiceTypeOrFail()->getUuidOrFail();
+        foreach ($serviceTransfers as $serviceTransfer) {
+            $serviceTypeUuid = $serviceTransfer->getServiceTypeOrFail()->getUuidOrFail();
 
-            $servicePointServiceTransfer->setServiceType(
+            $serviceTransfer->setServiceType(
                 $serviceTypeTransfersIndexedByUuids[$serviceTypeUuid],
             );
         }
 
-        return $servicePointServiceTransfers;
+        return $serviceTransfers;
     }
 
     /**
@@ -82,17 +82,17 @@ class ServicePointServiceServiceTypeExpander implements ServicePointServiceServi
     }
 
     /**
-     * @param \ArrayObject<array-key, \Generated\Shared\Transfer\ServicePointServiceTransfer> $servicePointServiceTransfers
+     * @param \ArrayObject<array-key, \Generated\Shared\Transfer\ServiceTransfer> $serviceTransfers
      *
      * @return list<string>
      */
-    protected function extractServiceTypeUuidsFromServicePointServiceTransfers(
-        ArrayObject $servicePointServiceTransfers
+    protected function extractServiceTypeUuidsFromServiceTransfers(
+        ArrayObject $serviceTransfers
     ): array {
         $serviceTypeUuids = [];
 
-        foreach ($servicePointServiceTransfers as $servicePointServiceTransfer) {
-            $serviceTypeUuids[] = $servicePointServiceTransfer->getServiceTypeOrFail()->getUuidOrFail();
+        foreach ($serviceTransfers as $serviceTransfer) {
+            $serviceTypeUuids[] = $serviceTransfer->getServiceTypeOrFail()->getUuidOrFail();
         }
 
         return $serviceTypeUuids;

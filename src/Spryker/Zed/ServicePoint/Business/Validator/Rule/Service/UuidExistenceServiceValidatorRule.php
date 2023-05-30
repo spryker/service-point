@@ -5,23 +5,23 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePointService;
+namespace Spryker\Zed\ServicePoint\Business\Validator\Rule\Service;
 
 use ArrayObject;
 use Generated\Shared\Transfer\ErrorCollectionTransfer;
-use Generated\Shared\Transfer\ServicePointServiceConditionsTransfer;
-use Generated\Shared\Transfer\ServicePointServiceCriteriaTransfer;
-use Generated\Shared\Transfer\ServicePointServiceTransfer;
+use Generated\Shared\Transfer\ServiceConditionsTransfer;
+use Generated\Shared\Transfer\ServiceCriteriaTransfer;
+use Generated\Shared\Transfer\ServiceTransfer;
 use Spryker\Zed\ServicePoint\Business\Validator\Rule\TerminationAwareValidatorRuleInterface;
 use Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface;
 use Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface;
 
-class KeyImmutabilityServicePointServiceValidatorRule implements ServicePointServiceValidatorRuleInterface, TerminationAwareValidatorRuleInterface
+class UuidExistenceServiceValidatorRule implements ServiceValidatorRuleInterface, TerminationAwareValidatorRuleInterface
 {
     /**
      * @var string
      */
-    protected const GLOSSARY_KEY_VALIDATION_SERVICE_POINT_SERVICE_KEY_IMMUTABLILITY = 'service_point.validation.service_point_service_key_immutability';
+    protected const GLOSSARY_KEY_VALIDATION_SERVICE_ENTITY_NOT_FOUND = 'service_point.validation.service_entity_not_found';
 
     /**
      * @var \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface
@@ -46,20 +46,20 @@ class KeyImmutabilityServicePointServiceValidatorRule implements ServicePointSer
     }
 
     /**
-     * @param \ArrayObject<array-key, \Generated\Shared\Transfer\ServicePointServiceTransfer> $servicePointServiceTransfers
+     * @param \ArrayObject<array-key, \Generated\Shared\Transfer\ServiceTransfer> $serviceTransfers
      *
      * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
      */
-    public function validate(ArrayObject $servicePointServiceTransfers): ErrorCollectionTransfer
+    public function validate(ArrayObject $serviceTransfers): ErrorCollectionTransfer
     {
         $errorCollectionTransfer = new ErrorCollectionTransfer();
 
-        foreach ($servicePointServiceTransfers as $entityIdentifier => $servicePointServiceTransfer) {
-            if ($this->hasChangedServicePointServiceKey($servicePointServiceTransfer)) {
+        foreach ($serviceTransfers as $entityIdentifier => $serviceTransfer) {
+            if (!$this->hasServiceWithUuid($serviceTransfer)) {
                 $this->errorAdder->addError(
                     $errorCollectionTransfer,
                     $entityIdentifier,
-                    static::GLOSSARY_KEY_VALIDATION_SERVICE_POINT_SERVICE_KEY_IMMUTABLILITY,
+                    static::GLOSSARY_KEY_VALIDATION_SERVICE_ENTITY_NOT_FOUND,
                 );
             }
         }
@@ -81,23 +81,23 @@ class KeyImmutabilityServicePointServiceValidatorRule implements ServicePointSer
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ServicePointServiceTransfer $servicePointServiceTransfer
+     * @param \Generated\Shared\Transfer\ServiceTransfer $serviceTransfer
      *
      * @return bool
      */
-    protected function hasChangedServicePointServiceKey(ServicePointServiceTransfer $servicePointServiceTransfer): bool
+    protected function hasServiceWithUuid(ServiceTransfer $serviceTransfer): bool
     {
-        $servicePointServiceConditionsTransfer = (new ServicePointServiceConditionsTransfer())
-            ->addUuid($servicePointServiceTransfer->getUuidOrFail())
-            ->addKey($servicePointServiceTransfer->getKeyOrFail());
+        $serviceConditionsTransfer = (new ServiceConditionsTransfer())
+            ->addUuid($serviceTransfer->getUuidOrFail());
 
-        $servicePointServiceCriteriaTransfer = (new ServicePointServiceCriteriaTransfer())->setServicePointServiceConditions($servicePointServiceConditionsTransfer);
+        $serviceCriteriaTransfer = (new ServiceCriteriaTransfer())
+            ->setServiceConditions($serviceConditionsTransfer);
 
-        /** @var \ArrayObject<array-key, \Generated\Shared\Transfer\ServicePointServiceTransfer> $servicePointServiceTransfers */
-        $servicePointServiceTransfers = $this->servicePointRepository
-            ->getServicePointServiceCollection($servicePointServiceCriteriaTransfer)
-            ->getServicePointServices();
+        /** @var \ArrayObject<array-key, \Generated\Shared\Transfer\ServiceTransfer> $serviceTransfers */
+        $serviceTransfers = $this->servicePointRepository
+            ->getServiceCollection($serviceCriteriaTransfer)
+            ->getServices();
 
-        return $servicePointServiceTransfers->count() === 0;
+        return $serviceTransfers->count() === 1;
     }
 }
