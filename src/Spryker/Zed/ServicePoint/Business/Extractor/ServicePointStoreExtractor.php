@@ -14,7 +14,7 @@ class ServicePointStoreExtractor implements ServicePointStoreExtractorInterface
     /**
      * @param \Generated\Shared\Transfer\StoreRelationTransfer $storeRelationTransfer
      *
-     * @return list<string>
+     * @return array<string>
      */
     public function extractStoreNamesFromStoreRelationTransfer(StoreRelationTransfer $storeRelationTransfer): array
     {
@@ -28,9 +28,9 @@ class ServicePointStoreExtractor implements ServicePointStoreExtractorInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\StoreTransfer> $storeTransfers
+     * @param array<\Generated\Shared\Transfer\StoreTransfer> $storeTransfers
      *
-     * @return list<int>
+     * @return array<int>
      */
     public function extractStoreIdsFromStoreTransfers(array $storeTransfers): array
     {

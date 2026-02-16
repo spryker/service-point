@@ -69,7 +69,7 @@ class ServicePointStoreRelationCreator implements ServicePointStoreRelationCreat
 
     /**
      * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     * @param list<int> $storeIds
+     * @param array<int> $storeIds
      *
      * @return \Generated\Shared\Transfer\ServicePointTransfer
      */

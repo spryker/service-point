@@ -102,7 +102,7 @@ class StoreExistenceServicePointValidatorRule implements ServicePointValidatorRu
     /**
      * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
      * @param array<string|int, array<string>> $storeNamesGroupedByEntityIdentifier
-     * @param list<string> $existingStoreNames
+     * @param array<string> $existingStoreNames
      *
      * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
      */
@@ -129,7 +129,7 @@ class StoreExistenceServicePointValidatorRule implements ServicePointValidatorRu
     /**
      * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
      * @param string|int $entityIdentifier
-     * @param list<string> $nonExistingStoreNames
+     * @param array<string> $nonExistingStoreNames
      *
      * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
      */
@@ -153,7 +153,7 @@ class StoreExistenceServicePointValidatorRule implements ServicePointValidatorRu
     }
 
     /**
-     * @param array<string|int, list<string>> $storeNamesGroupedByEntityIdentifier
+     * @param array<string|int, array<string>> $storeNamesGroupedByEntityIdentifier
      *
      * @return array<int, string>
      */
@@ -171,7 +171,7 @@ class StoreExistenceServicePointValidatorRule implements ServicePointValidatorRu
     /**
      * @param array<\Generated\Shared\Transfer\StoreRelationTransfer> $storeRelationTransfers
      *
-     * @return array<int|string, list<string>>
+     * @return array<int|string, array<string>>
      */
     protected function getStoreNamesGroupedByEntityIdentifier(array $storeRelationTransfers): array
     {
