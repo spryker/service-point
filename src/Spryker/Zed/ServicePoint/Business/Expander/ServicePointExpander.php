@@ -21,19 +21,11 @@ class ServicePointExpander implements ServicePointExpanderInterface
      */
     protected ServicePointRepositoryInterface $servicePointRepository;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface $servicePointRepository
-     */
     public function __construct(ServicePointRepositoryInterface $servicePointRepository)
     {
         $this->servicePointRepository = $servicePointRepository;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressCollectionTransfer $servicePointAddressCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointAddressCollectionTransfer
-     */
     public function expandServicePointAddressCollectionWithServicePointIds(
         ServicePointAddressCollectionTransfer $servicePointAddressCollectionTransfer
     ): ServicePointAddressCollectionTransfer {

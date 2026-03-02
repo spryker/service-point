@@ -32,10 +32,6 @@ class ServicePointHasSingleServicePointAddressValidatorRule implements ServicePo
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface $servicePointRepository
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(
         ServicePointRepositoryInterface $servicePointRepository,
         ErrorAdderInterface $errorAdder
@@ -79,11 +75,6 @@ class ServicePointHasSingleServicePointAddressValidatorRule implements ServicePo
         return $postValidationErrorTransfers->count() > $initialErrorTransfers->count();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressTransfer $servicePointAddressTransfer
-     *
-     * @return bool
-     */
     protected function hasAnotherServicePointAddress(ServicePointAddressTransfer $servicePointAddressTransfer): bool
     {
         $servicePointAddressConditionsTransfer = (new ServicePointAddressConditionsTransfer())

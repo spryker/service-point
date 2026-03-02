@@ -22,20 +22,11 @@ class ServicePointAddressMapper
      */
     protected CountryMapper $countryMapper;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\Propel\Mapper\CountryMapper $countryMapper
-     */
     public function __construct(CountryMapper $countryMapper)
     {
         $this->countryMapper = $countryMapper;
     }
 
-    /**
-     * @param \Propel\Runtime\Collection\ObjectCollection $servicePointAddressEntities
-     * @param \Generated\Shared\Transfer\ServicePointAddressCollectionTransfer $servicePointAddressCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointAddressCollectionTransfer
-     */
     public function mapServicePointAddressEntitiesToServicePointAddressCollectionTransfer(
         ObjectCollection $servicePointAddressEntities,
         ServicePointAddressCollectionTransfer $servicePointAddressCollectionTransfer
@@ -49,12 +40,6 @@ class ServicePointAddressMapper
         return $servicePointAddressCollectionTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\ServicePoint\Persistence\SpyServicePointAddress $servicePointAddressEntity
-     * @param \Generated\Shared\Transfer\ServicePointAddressTransfer $servicePointAddressTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointAddressTransfer
-     */
     public function mapServicePointAddressEntityToServicePointAddressTransfer(
         SpyServicePointAddress $servicePointAddressEntity,
         ServicePointAddressTransfer $servicePointAddressTransfer
@@ -78,12 +63,6 @@ class ServicePointAddressMapper
         return $servicePointAddressTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressTransfer $servicePointAddressTransfer
-     * @param \Orm\Zed\ServicePoint\Persistence\SpyServicePointAddress $servicePointAddressEntity
-     *
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServicePointAddress
-     */
     public function mapServicePointAddressTransferToServicePointAddressEntity(
         ServicePointAddressTransfer $servicePointAddressTransfer,
         SpyServicePointAddress $servicePointAddressEntity

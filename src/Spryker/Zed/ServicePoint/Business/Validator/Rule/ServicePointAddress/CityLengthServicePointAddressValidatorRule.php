@@ -43,9 +43,6 @@ class CityLengthServicePointAddressValidatorRule implements ServicePointAddressV
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(ErrorAdderInterface $errorAdder)
     {
         $this->errorAdder = $errorAdder;
@@ -90,11 +87,6 @@ class CityLengthServicePointAddressValidatorRule implements ServicePointAddressV
         return $postValidationErrorTransfers->count() > $initialErrorTransfers->count();
     }
 
-    /**
-     * @param string $city
-     *
-     * @return bool
-     */
     protected function isServicePointAddressCityLengthValid(string $city): bool
     {
         return mb_strlen($city) >= static::SERVICE_POINT_ADDRESS_CITY_MIN_LENGTH

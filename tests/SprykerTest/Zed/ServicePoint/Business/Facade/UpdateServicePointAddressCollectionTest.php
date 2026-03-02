@@ -116,9 +116,6 @@ class UpdateServicePointAddressCollectionTest extends Unit
      */
     protected const GLOSSARY_KEY_VALIDATION_SERVICE_POINT_ADDRESS_ENTITY_NOT_FOUND = 'service_point.validation.service_point_address_entity_not_found';
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -126,9 +123,6 @@ class UpdateServicePointAddressCollectionTest extends Unit
         $this->tester->ensureServicePointTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatesServicePoint(): void
     {
         // Arrange
@@ -180,9 +174,6 @@ class UpdateServicePointAddressCollectionTest extends Unit
         $this->assertSame($newCountryTransfer->getIso2CodeOrFail(), $persistedServicePointAddressTransfer->getCountryOrFail()->getIso2CodeOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatesServicePointOptionalAttributesToNull(): void
     {
         // Arrange
@@ -221,9 +212,6 @@ class UpdateServicePointAddressCollectionTest extends Unit
         $this->assertSame($servicePointAddressTransfer->getCountry()->getIso2CodeOrFail(), $persistedServicePointAddressTransfer->getCountryOrFail()->getIso2CodeOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesCountryExistence(): void
     {
         // Arrange
@@ -251,9 +239,6 @@ class UpdateServicePointAddressCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_COUNTRY_ENTITY_NOT_FOUND, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesRegionExistence(): void
     {
         // Arrange
@@ -281,9 +266,6 @@ class UpdateServicePointAddressCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_REGION_ENTITY_NOT_FOUND, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesServicePointExistence(): void
     {
         // Arrange
@@ -311,9 +293,6 @@ class UpdateServicePointAddressCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_POINT_ADDRESS_SERVICE_POINT_ENTITY_NOT_FOUND, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesServicePointAddressExistence(): void
     {
         // Arrange
@@ -341,9 +320,6 @@ class UpdateServicePointAddressCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_POINT_ADDRESS_ENTITY_NOT_FOUND, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesServicePointUniqueness(): void
     {
         // Arrange
@@ -379,9 +355,6 @@ class UpdateServicePointAddressCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_POINT_ADDRESS_SERVICE_POINT_UUID_IS_NOT_UNIQUE, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesServicePointHasSingleAddress(): void
     {
         // Arrange

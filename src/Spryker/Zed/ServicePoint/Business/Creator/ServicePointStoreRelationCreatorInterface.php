@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\ServicePointTransfer;
 
 interface ServicePointStoreRelationCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointTransfer
-     */
     public function createServicePointStoreRelations(ServicePointTransfer $servicePointTransfer): ServicePointTransfer;
 }

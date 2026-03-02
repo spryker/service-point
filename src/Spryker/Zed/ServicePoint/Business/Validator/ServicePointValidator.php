@@ -28,11 +28,6 @@ class ServicePointValidator implements ServicePointValidatorInterface
         $this->servicePointValidatorRules = $servicePointValidatorRules;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCollectionResponseTransfer $servicePointCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointCollectionResponseTransfer
-     */
     public function validate(
         ServicePointCollectionResponseTransfer $servicePointCollectionResponseTransfer
     ): ServicePointCollectionResponseTransfer {
@@ -79,12 +74,6 @@ class ServicePointValidator implements ServicePointValidatorInterface
         return $servicePointValidatorRule->isTerminated($initialErrorTransfers, $postValidationErrorTransfers);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCollectionResponseTransfer $servicePointCollectionResponseTransfer
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointCollectionResponseTransfer
-     */
     protected function mergeErrors(
         ServicePointCollectionResponseTransfer $servicePointCollectionResponseTransfer,
         ErrorCollectionTransfer $errorCollectionTransfer

@@ -56,9 +56,6 @@ class UpdateServiceCollectionTest extends Unit
      */
     protected ServicePointBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -66,9 +63,6 @@ class UpdateServiceCollectionTest extends Unit
         $this->tester->ensureServicePointTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateService(): void
     {
         // Arrange
@@ -95,9 +89,6 @@ class UpdateServiceCollectionTest extends Unit
                 ->getIsActiveOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateServiceIsActiveProperty(): void
     {
         // Arrange
@@ -122,9 +113,6 @@ class UpdateServiceCollectionTest extends Unit
             ->getIsActiveOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateKeyImmutability(): void
     {
         // Arrange
@@ -151,9 +139,6 @@ class UpdateServiceCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_KEY_IMMUTABILITY, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateExistenceByUuid(): void
     {
         // Arrange
@@ -180,9 +165,6 @@ class UpdateServiceCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_ENTITY_NOT_FOUND, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateServicesForNonTransactionalMode(): void
     {
         // Arrange
@@ -210,9 +192,6 @@ class UpdateServiceCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_KEY_IMMUTABILITY, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenIsTransactionIsNotSet(): void
     {
         // Arrange
@@ -227,9 +206,6 @@ class UpdateServiceCollectionTest extends Unit
         $this->tester->getFacade()->updateServiceCollection($serviceCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenServicesAreNotSet(): void
     {
         // Arrange
@@ -243,9 +219,6 @@ class UpdateServiceCollectionTest extends Unit
         $this->tester->getFacade()->updateServiceCollection($serviceCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenServiceUuidIsNotSet(): void
     {
         // Arrange
@@ -264,9 +237,6 @@ class UpdateServiceCollectionTest extends Unit
         $this->tester->getFacade()->updateServiceCollection($serviceCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenServiceKeyIsNotSet(): void
     {
         // Arrange
@@ -285,9 +255,6 @@ class UpdateServiceCollectionTest extends Unit
         $this->tester->getFacade()->updateServiceCollection($serviceCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenServiceIsActiveIsNotSet(): void
     {
         // Arrange
@@ -317,9 +284,6 @@ class UpdateServiceCollectionTest extends Unit
         ];
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ServiceTransfer
-     */
     protected function createServiceTransferWithRelations(): ServiceTransfer
     {
         $servicePointTransfer = $this->tester->haveServicePoint()->toArray();

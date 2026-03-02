@@ -28,11 +28,6 @@ class ServiceValidator implements ServiceValidatorInterface
         $this->serviceValidatorRules = $serviceValidatorRules;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceCollectionResponseTransfer $serviceCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceCollectionResponseTransfer
-     */
     public function validate(
         ServiceCollectionResponseTransfer $serviceCollectionResponseTransfer
     ): ServiceCollectionResponseTransfer {
@@ -85,12 +80,6 @@ class ServiceValidator implements ServiceValidatorInterface
         return $serviceValidatorRule->isTerminated($initialErrorTransfers, $postValidationErrorTransfers);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceCollectionResponseTransfer $serviceCollectionResponseTransfer
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceCollectionResponseTransfer
-     */
     protected function mergeErrors(
         ServiceCollectionResponseTransfer $serviceCollectionResponseTransfer,
         ErrorCollectionTransfer $errorCollectionTransfer

@@ -56,9 +56,6 @@ class ServicePointBusinessTester extends Actor
      */
     protected const COUNTRY_ISO3_CODE = '000';
 
-    /**
-     * @return void
-     */
     public function ensureServicePointTablesAreEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty(
@@ -74,13 +71,6 @@ class ServicePointBusinessTester extends Actor
         );
     }
 
-    /**
-     * @param string $storeName
-     * @param array $servicePointSeedData
-     * @param bool $isStoreCreationNeeded
-     *
-     * @return \Generated\Shared\Transfer\ServicePointTransfer
-     */
     public function createServicePointTransferWithStoreRelation(
         string $storeName,
         array $servicePointSeedData = [],
@@ -140,9 +130,6 @@ class ServicePointBusinessTester extends Actor
         return $servicePointAddressTransfer;
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServicePointAddressQuery
-     */
     public function getServicePointAddressQuery(): SpyServicePointAddressQuery
     {
         return SpyServicePointAddressQuery::create();
@@ -164,25 +151,16 @@ class ServicePointBusinessTester extends Actor
             ->build();
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServicePointQuery
-     */
     public function getServicePointQuery(): SpyServicePointQuery
     {
         return SpyServicePointQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServiceTypeQuery
-     */
     public function getServiceTypeQuery(): SpyServiceTypeQuery
     {
         return SpyServiceTypeQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServiceQuery
-     */
     public function getServiceQuery(): SpyServiceQuery
     {
         return SpyServiceQuery::create();

@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ServiceCriteriaTransfer;
 
 interface ServiceReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServiceCriteriaTransfer $serviceCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceCollectionTransfer
-     */
     public function getServiceCollection(
         ServiceCriteriaTransfer $serviceCriteriaTransfer
     ): ServiceCollectionTransfer;

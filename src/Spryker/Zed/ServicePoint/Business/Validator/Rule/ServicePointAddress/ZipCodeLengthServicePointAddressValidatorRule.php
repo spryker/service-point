@@ -43,9 +43,6 @@ class ZipCodeLengthServicePointAddressValidatorRule implements ServicePointAddre
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(ErrorAdderInterface $errorAdder)
     {
         $this->errorAdder = $errorAdder;
@@ -90,11 +87,6 @@ class ZipCodeLengthServicePointAddressValidatorRule implements ServicePointAddre
         return $postValidationErrorTransfers->count() > $initialErrorTransfers->count();
     }
 
-    /**
-     * @param string $zipCode
-     *
-     * @return bool
-     */
     protected function isServicePointAddressZipCodeLengthValid(string $zipCode): bool
     {
         return mb_strlen($zipCode) >= static::SERVICE_POINT_ADDRESS_ZIP_CODE_MIN_LENGTH

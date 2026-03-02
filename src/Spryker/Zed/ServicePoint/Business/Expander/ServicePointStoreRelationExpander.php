@@ -20,19 +20,11 @@ class ServicePointStoreRelationExpander implements ServicePointStoreRelationExpa
      */
     protected ServicePointRepositoryInterface $servicePointRepository;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface $servicePointRepository
-     */
     public function __construct(ServicePointRepositoryInterface $servicePointRepository)
     {
         $this->servicePointRepository = $servicePointRepository;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCollectionTransfer $servicePointCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointCollectionTransfer
-     */
     public function expandServicePointCollectionWithStoreRelations(
         ServicePointCollectionTransfer $servicePointCollectionTransfer
     ): ServicePointCollectionTransfer {
@@ -51,11 +43,6 @@ class ServicePointStoreRelationExpander implements ServicePointStoreRelationExpa
         return $servicePointCollectionTransfer->setServicePoints($servicePointTransfers);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceCollectionTransfer $serviceCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceCollectionTransfer
-     */
     public function expandServiceCollectionWithServicePointStoreRelations(
         ServiceCollectionTransfer $serviceCollectionTransfer
     ): ServiceCollectionTransfer {
@@ -116,11 +103,6 @@ class ServicePointStoreRelationExpander implements ServicePointStoreRelationExpa
         return $servicePointIds;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceCollectionTransfer $serviceCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointCollectionTransfer
-     */
     protected function extractServicePointCollectionFromServiceCollection(ServiceCollectionTransfer $serviceCollectionTransfer): ServicePointCollectionTransfer
     {
         $servicePointTransfers = [];

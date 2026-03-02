@@ -110,9 +110,6 @@ use Spryker\Zed\ServicePoint\ServicePointDependencyProvider;
  */
 class ServicePointBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Reader\ServicePointReaderInterface
-     */
     public function createServicePointReader(): ServicePointReaderInterface
     {
         return new ServicePointReader(
@@ -122,9 +119,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Reader\ServiceReaderInterface
-     */
     public function createServiceReader(): ServiceReaderInterface
     {
         return new ServiceReader(
@@ -134,9 +128,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Creator\ServicePointCreatorInterface
-     */
     public function createServicePointCreator(): ServicePointCreatorInterface
     {
         return new ServicePointCreator(
@@ -147,9 +138,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Creator\ServicePointAddressCreatorInterface
-     */
     public function createServicePointAddressCreator(): ServicePointAddressCreatorInterface
     {
         return new ServicePointAddressCreator(
@@ -161,9 +149,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Updater\ServicePointAddressUpdaterInterface
-     */
     public function createServicePointAddressUpdater(): ServicePointAddressUpdaterInterface
     {
         return new ServicePointAddressUpdater(
@@ -175,9 +160,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Expander\CountryExpanderInterface
-     */
     public function createCountryExpander(): CountryExpanderInterface
     {
         return new CountryExpander(
@@ -185,9 +167,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Expander\ServicePointExpanderInterface
-     */
     public function createServicePointExpander(): ServicePointExpanderInterface
     {
         return new ServicePointExpander(
@@ -195,17 +174,11 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Extractor\ErrorExtractorInterface
-     */
     public function createErrorExtractor(): ErrorExtractorInterface
     {
         return new ErrorExtractor();
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Filter\ServicePointAddressFilterInterface
-     */
     public function createServicePointAddressFilter(): ServicePointAddressFilterInterface
     {
         return new ServicePointAddressFilter(
@@ -213,9 +186,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Updater\ServicePointUpdaterInterface
-     */
     public function createServicePointUpdater(): ServicePointUpdaterInterface
     {
         return new ServicePointUpdater(
@@ -226,9 +196,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Creator\ServicePointStoreRelationCreatorInterface
-     */
     public function createServicePointStoreRelationCreator(): ServicePointStoreRelationCreatorInterface
     {
         return new ServicePointStoreRelationCreator(
@@ -238,9 +205,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Updater\ServicePointStoreRelationUpdaterInterface
-     */
     public function createServicePointStoreRelationUpdater(): ServicePointStoreRelationUpdaterInterface
     {
         return new ServicePointStoreRelationUpdater(
@@ -251,9 +215,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Expander\ServicePointStoreRelationExpanderInterface
-     */
     public function createServicePointStoreRelationExpander(): ServicePointStoreRelationExpanderInterface
     {
         return new ServicePointStoreRelationExpander(
@@ -261,9 +222,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Expander\ServiceRelationExpanderInterface
-     */
     public function createServiceRelationExpander(): ServiceRelationExpanderInterface
     {
         return new ServiceRelationExpander(
@@ -271,17 +229,11 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Extractor\ServicePointStoreExtractorInterface
-     */
     public function createServicePointStoreExtractor(): ServicePointStoreExtractorInterface
     {
         return new ServicePointStoreExtractor();
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Filter\ServicePointFilterInterface
-     */
     public function createServicePointFilter(): ServicePointFilterInterface
     {
         return new ServicePointFilter(
@@ -289,33 +241,21 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\ServicePointValidatorInterface
-     */
     public function createServicePointCreateValidator(): ServicePointValidatorInterface
     {
         return new ServicePointValidator($this->getServicePointCreateValidatorRules());
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\ServicePointValidatorInterface
-     */
     public function createServicePointUpdateValidator(): ServicePointValidatorInterface
     {
         return new ServicePointValidator($this->getServicePointUpdateValidatorRules());
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\ServicePointAddressValidatorInterface
-     */
     public function createServicePointAddressCreateValidator(): ServicePointAddressValidatorInterface
     {
         return new ServicePointAddressValidator($this->getServicePointAddressCreateValidatorRules());
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\ServicePointAddressValidatorInterface
-     */
     public function createServicePointAddressUpdateValidator(): ServicePointAddressValidatorInterface
     {
         return new ServicePointAddressValidator($this->getServicePointAddressUpdateValidatorRules());
@@ -383,9 +323,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         ];
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePoint\ServicePointValidatorRuleInterface
-     */
     public function createKeyExistenceServicePointValidatorRule(): ServicePointValidatorRuleInterface
     {
         return new KeyExistenceServicePointValidatorRule(
@@ -394,9 +331,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePoint\ServicePointValidatorRuleInterface
-     */
     public function createNameLengthServicePointValidatorRule(): ServicePointValidatorRuleInterface
     {
         return new NameLengthServicePointValidatorRule(
@@ -404,9 +338,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePoint\ServicePointValidatorRuleInterface
-     */
     public function createKeyLengthServicePointValidatorRule(): ServicePointValidatorRuleInterface
     {
         return new KeyLengthServicePointValidatorRule(
@@ -414,9 +345,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePoint\ServicePointValidatorRuleInterface
-     */
     public function createKeyUniquenessServicePointValidatorRule(): ServicePointValidatorRuleInterface
     {
         return new KeyUniquenessServicePointValidatorRule(
@@ -424,9 +352,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePoint\ServicePointValidatorRuleInterface
-     */
     public function createStoreExistenceServicePointValidatorRule(): ServicePointValidatorRuleInterface
     {
         return new StoreExistenceServicePointValidatorRule(
@@ -436,9 +361,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePoint\ServicePointValidatorRuleInterface
-     */
     public function createExistenceByUuidServicePointValidatorRule(): ServicePointValidatorRuleInterface
     {
         return new ExistenceByUuidServicePointValidatorRule(
@@ -447,9 +369,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePointAddress\ServicePointAddressValidatorRuleInterface
-     */
     public function createCountryAndRegionExistenceByIso2CodeServicePointAddressValidatorRule(): ServicePointAddressValidatorRuleInterface
     {
         return new CountryAndRegionExistenceByIso2CodeServicePointAddressValidatorRule(
@@ -458,9 +377,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePointAddress\ServicePointAddressValidatorRuleInterface
-     */
     public function createAddressLengthServicePointAddressValidatorRule(): ServicePointAddressValidatorRuleInterface
     {
         return new AddressLengthServicePointAddressValidatorRule(
@@ -468,9 +384,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePointAddress\ServicePointAddressValidatorRuleInterface
-     */
     public function createCityLengthServicePointAddressValidatorRule(): ServicePointAddressValidatorRuleInterface
     {
         return new CityLengthServicePointAddressValidatorRule(
@@ -478,9 +391,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePointAddress\ServicePointAddressValidatorRuleInterface
-     */
     public function createExistenceByUuidServicePointAddressValidatorRule(): ServicePointAddressValidatorRuleInterface
     {
         return new ExistenceByUuidServicePointAddressValidatorRule(
@@ -489,9 +399,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePointAddress\ServicePointAddressValidatorRuleInterface
-     */
     public function createServicePointExistenceByUuidServicePointAddressValidatorRule(): ServicePointAddressValidatorRuleInterface
     {
         return new ServicePointExistenceByUuidServicePointAddressValidatorRule(
@@ -500,9 +407,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePointAddress\ServicePointAddressValidatorRuleInterface
-     */
     public function createServicePointHasSingleServicePointAddressValidatorRule(): ServicePointAddressValidatorRuleInterface
     {
         return new ServicePointHasSingleServicePointAddressValidatorRule(
@@ -511,9 +415,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePointAddress\ServicePointAddressValidatorRuleInterface
-     */
     public function createServicePointUuidUniquenessServicePointAddressValidatorRule(): ServicePointAddressValidatorRuleInterface
     {
         return new ServicePointUuidUniquenessServicePointAddressValidatorRule(
@@ -521,9 +422,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServicePointAddress\ServicePointAddressValidatorRuleInterface
-     */
     public function createZipCodeLengthServicePointAddressValidatorRule(): ServicePointAddressValidatorRuleInterface
     {
         return new ZipCodeLengthServicePointAddressValidatorRule(
@@ -531,33 +429,21 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface
-     */
     public function createErrorAdder(): ErrorAdderInterface
     {
         return new ErrorAdder();
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Dependency\Facade\ServicePointToStoreFacadeInterface
-     */
     public function getStoreFacade(): ServicePointToStoreFacadeInterface
     {
         return $this->getProvidedDependency(ServicePointDependencyProvider::FACADE_STORE);
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Dependency\Facade\ServicePointToCountryFacadeInterface
-     */
     public function getCountryFacade(): ServicePointToCountryFacadeInterface
     {
         return $this->getProvidedDependency(ServicePointDependencyProvider::FACADE_COUNTRY);
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Creator\ServiceCreatorInterface
-     */
     public function createServiceCreator(): ServiceCreatorInterface
     {
         return new ServiceCreator(
@@ -569,9 +455,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Expander\ServiceTypeExpanderInterface
-     */
     public function createServiceTypeExpander(): ServiceTypeExpanderInterface
     {
         return new ServiceTypeExpander(
@@ -579,9 +462,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Updater\ServiceUpdaterInterface
-     */
     public function createServiceUpdater(): ServiceUpdaterInterface
     {
         return new ServiceUpdater(
@@ -591,25 +471,16 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\ServiceValidatorInterface
-     */
     public function createServiceCreateValidator(): ServiceValidatorInterface
     {
         return new ServiceValidator($this->getServiceCreateValidatorRules());
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\ServiceValidatorInterface
-     */
     public function createServiceUpdateValidator(): ServiceValidatorInterface
     {
         return new ServiceValidator($this->getServiceUpdateValidatorRules());
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Filter\ServiceFilterInterface
-     */
     public function createServiceFilter(): ServiceFilterInterface
     {
         return new ServiceFilter(
@@ -644,9 +515,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         ];
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\Service\ServiceValidatorRuleInterface
-     */
     public function createUuidExistenceServiceValidatorRule(): ServiceValidatorRuleInterface
     {
         return new UuidExistenceServiceValidatorRule(
@@ -655,9 +523,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\Service\ServiceValidatorRuleInterface
-     */
     public function createServicePointUuidExistenceServiceValidatorRule(): ServiceValidatorRuleInterface
     {
         return new ServicePointUuidExistenceServiceValidatorRule(
@@ -666,9 +531,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\Service\ServiceValidatorRuleInterface
-     */
     public function createServiceTypeUuidExistenceServiceValidatorRule(): ServiceValidatorRuleInterface
     {
         return new ServiceTypeUuidExistenceServiceValidatorRule(
@@ -677,9 +539,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\Service\ServiceValidatorRuleInterface
-     */
     public function createServiceTypeUniquenessServiceValidatorRule(): ServiceValidatorRuleInterface
     {
         return new ServiceTypeUniquenessServiceValidatorRule(
@@ -687,9 +546,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\Service\ServiceValidatorRuleInterface
-     */
     public function createServiceTypeExistenceServiceValidatorRule(): ServiceValidatorRuleInterface
     {
         return new ServiceTypeExistenceServiceValidatorRule(
@@ -698,9 +554,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\Service\ServiceValidatorRuleInterface
-     */
     public function createKeyImmutabilityServiceValidatorRule(): ServiceValidatorRuleInterface
     {
         return new KeyImmutabilityServiceValidatorRule(
@@ -709,9 +562,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\Service\ServiceValidatorRuleInterface
-     */
     public function createKeyUniquenessServiceValidatorRule(): ServiceValidatorRuleInterface
     {
         return new KeyUniquenessServiceValidatorRule(
@@ -719,9 +569,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\Service\ServiceValidatorRuleInterface
-     */
     public function createKeyLengthServiceValidatorRule(): ServiceValidatorRuleInterface
     {
         return new KeyLengthServiceValidatorRule(
@@ -729,9 +576,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\Service\ServiceValidatorRuleInterface
-     */
     public function createKeyExistenceServiceValidatorRule(): ServiceValidatorRuleInterface
     {
         return new KeyExistenceServiceValidatorRule(
@@ -740,9 +584,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Creator\ServiceTypeCreatorInterface
-     */
     public function createServiceTypeCreator(): ServiceTypeCreatorInterface
     {
         return new ServiceTypeCreator(
@@ -752,9 +593,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Updater\ServiceTypeUpdaterInterface
-     */
     public function createServiceTypeUpdater(): ServiceTypeUpdaterInterface
     {
         return new ServiceTypeUpdater(
@@ -793,25 +631,16 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         ];
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\ServiceTypeValidatorInterface
-     */
     public function createServiceTypeCreateValidator(): ServiceTypeValidatorInterface
     {
         return new ServiceTypeValidator($this->getServiceTypeCreateValidatorRules());
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\ServiceTypeValidatorInterface
-     */
     public function createServiceTypeUpdateValidator(): ServiceTypeValidatorInterface
     {
         return new ServiceTypeValidator($this->getServiceTypeUpdateValidatorRules());
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Filter\ServiceTypeFilterInterface
-     */
     public function createServiceTypeFilter(): ServiceTypeFilterInterface
     {
         return new ServiceTypeFilter(
@@ -819,9 +648,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServiceType\ServiceTypeValidatorRuleInterface
-     */
     public function createUuidExistenceServiceTypeValidatorRule(): ServiceTypeValidatorRuleInterface
     {
         return new UuidExistenceServiceTypeValidatorRule(
@@ -830,9 +656,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServiceType\ServiceTypeValidatorRuleInterface
-     */
     public function createNameLengthServiceTypeValidatorRule(): ServiceTypeValidatorRuleInterface
     {
         return new NameLengthServiceTypeValidatorRule(
@@ -840,9 +663,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServiceType\ServiceTypeValidatorRuleInterface
-     */
     public function createNameUniquenessServiceTypeValidatorRule(): ServiceTypeValidatorRuleInterface
     {
         return new NameUniquenessServiceTypeValidatorRule(
@@ -850,9 +670,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServiceType\ServiceTypeValidatorRuleInterface
-     */
     public function createNameExistenceServiceTypeValidatorRule(): ServiceTypeValidatorRuleInterface
     {
         return new NameExistenceServiceTypeValidatorRule(
@@ -861,9 +678,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServiceType\ServiceTypeValidatorRuleInterface
-     */
     public function createKeyImmutabilityServiceTypeValidatorRule(): ServiceTypeValidatorRuleInterface
     {
         return new KeyImmutabilityServiceTypeValidatorRule(
@@ -872,9 +686,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServiceType\ServiceTypeValidatorRuleInterface
-     */
     public function createKeyUniquenessServiceTypeValidatorRule(): ServiceTypeValidatorRuleInterface
     {
         return new KeyUniquenessServiceTypeValidatorRule(
@@ -882,9 +693,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServiceType\ServiceTypeValidatorRuleInterface
-     */
     public function createKeyLengthServiceTypeValidatorRule(): ServiceTypeValidatorRuleInterface
     {
         return new KeyLengthServiceTypeValidatorRule(
@@ -892,9 +700,6 @@ class ServicePointBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ServicePoint\Business\Validator\Rule\ServiceType\ServiceTypeValidatorRuleInterface
-     */
     public function createKeyExistenceServiceTypeValidatorRule(): ServiceTypeValidatorRuleInterface
     {
         return new KeyExistenceServiceTypeValidatorRule(

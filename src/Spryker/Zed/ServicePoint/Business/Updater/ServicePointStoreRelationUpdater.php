@@ -39,12 +39,6 @@ class ServicePointStoreRelationUpdater implements ServicePointStoreRelationUpdat
      */
     protected ServicePointStoreExtractorInterface $servicePointStoreExtractor;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Dependency\Facade\ServicePointToStoreFacadeInterface $storeFacade
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface $servicePointRepository
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointEntityManagerInterface $servicePointEntityManager
-     * @param \Spryker\Zed\ServicePoint\Business\Extractor\ServicePointStoreExtractorInterface $servicePointStoreExtractor
-     */
     public function __construct(
         ServicePointToStoreFacadeInterface $storeFacade,
         ServicePointRepositoryInterface $servicePointRepository,
@@ -57,11 +51,6 @@ class ServicePointStoreRelationUpdater implements ServicePointStoreRelationUpdat
         $this->servicePointStoreExtractor = $servicePointStoreExtractor;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointTransfer
-     */
     public function updateServicePointStoreRelations(ServicePointTransfer $servicePointTransfer): ServicePointTransfer
     {
         $requestedStoreNames = $this->servicePointStoreExtractor->extractStoreNamesFromStoreRelationTransfer(

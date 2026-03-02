@@ -82,9 +82,6 @@ class UpdateServiceTypeCollectionTest extends Unit
      */
     protected ServicePointBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -92,9 +89,6 @@ class UpdateServiceTypeCollectionTest extends Unit
         $this->tester->ensureServicePointTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateServiceType(): void
     {
         // Arrange
@@ -123,9 +117,6 @@ class UpdateServiceTypeCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateNameExistence(): void
     {
         // Arrange
@@ -155,9 +146,6 @@ class UpdateServiceTypeCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_TYPE_NAME_EXISTS, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateNameUniqueness(): void
     {
         // Arrange
@@ -217,9 +205,6 @@ class UpdateServiceTypeCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_TYPE_NAME_WRONG_LENGTH, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateKeyImmutable(): void
     {
         // Arrange
@@ -246,9 +231,6 @@ class UpdateServiceTypeCollectionTest extends Unit
         $this->assertSame(static::SERVICE_POINT_VALIDATION_SERVICE_TYPE_KEY_IMMUTABILITY, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateExistenceByUuid(): void
     {
         // Arrange
@@ -275,9 +257,6 @@ class UpdateServiceTypeCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_TYPE_ENTITY_NOT_FOUND, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateServiceTypesForNonTransactionalMode(): void
     {
         // Arrange
@@ -306,9 +285,6 @@ class UpdateServiceTypeCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_TYPE_NAME_WRONG_LENGTH, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenIsTransactionIsNotSet(): void
     {
         // Arrange
@@ -324,9 +300,6 @@ class UpdateServiceTypeCollectionTest extends Unit
         $this->tester->getFacade()->updateServiceTypeCollection($serviceTypeCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenServiceTypesAreNotSet(): void
     {
         // Arrange
@@ -340,9 +313,6 @@ class UpdateServiceTypeCollectionTest extends Unit
         $this->tester->getFacade()->updateServiceTypeCollection($serviceTypeCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenServiceTypeUuidIsNotSet(): void
     {
         // Arrange
@@ -361,9 +331,6 @@ class UpdateServiceTypeCollectionTest extends Unit
         $this->tester->getFacade()->updateServiceTypeCollection($serviceTypeCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenServiceTypeNameIsNotSet(): void
     {
         // Arrange
@@ -382,9 +349,6 @@ class UpdateServiceTypeCollectionTest extends Unit
         $this->tester->getFacade()->updateServiceTypeCollection($serviceTypeCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenServiceTypeKeyIsNotSet(): void
     {
         // Arrange

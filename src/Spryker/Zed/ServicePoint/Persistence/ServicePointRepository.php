@@ -31,11 +31,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
  */
 class ServicePointRepository extends AbstractRepository implements ServicePointRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCriteriaTransfer $servicePointCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointCollectionTransfer
-     */
     public function getServicePointCollection(
         ServicePointCriteriaTransfer $servicePointCriteriaTransfer
     ): ServicePointCollectionTransfer {
@@ -136,11 +131,6 @@ class ServicePointRepository extends AbstractRepository implements ServicePointR
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTypeCriteriaTransfer $serviceTypeCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceTypeCollectionTransfer
-     */
     public function getServiceTypeCollection(
         ServiceTypeCriteriaTransfer $serviceTypeCriteriaTransfer
     ): ServiceTypeCollectionTransfer {
@@ -173,11 +163,6 @@ class ServicePointRepository extends AbstractRepository implements ServicePointR
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceCriteriaTransfer $serviceCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceCollectionTransfer
-     */
     public function getServiceCollection(
         ServiceCriteriaTransfer $serviceCriteriaTransfer
     ): ServiceCollectionTransfer {
@@ -213,12 +198,6 @@ class ServicePointRepository extends AbstractRepository implements ServicePointR
             );
     }
 
-    /**
-     * @param \Orm\Zed\ServicePoint\Persistence\SpyServiceQuery $serviceQuery
-     * @param \Generated\Shared\Transfer\ServiceCriteriaTransfer $serviceCriteriaTransfer
-     *
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServiceQuery
-     */
     protected function applyServiceFilters(
         SpyServiceQuery $serviceQuery,
         ServiceCriteriaTransfer $serviceCriteriaTransfer
@@ -333,12 +312,6 @@ class ServicePointRepository extends AbstractRepository implements ServicePointR
         return $servicePointQuery;
     }
 
-    /**
-     * @param \Orm\Zed\ServicePoint\Persistence\SpyServicePointQuery $servicePointQuery
-     * @param \Generated\Shared\Transfer\ServicePointCriteriaTransfer $servicePointCriteriaTransfer
-     *
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServicePointQuery
-     */
     protected function applyServicePointSearch(
         SpyServicePointQuery $servicePointQuery,
         ServicePointCriteriaTransfer $servicePointCriteriaTransfer
@@ -364,12 +337,6 @@ class ServicePointRepository extends AbstractRepository implements ServicePointR
         return $servicePointQuery;
     }
 
-    /**
-     * @param \Orm\Zed\ServicePoint\Persistence\SpyServicePointAddressQuery $servicePointAddressQuery
-     * @param \Generated\Shared\Transfer\ServicePointAddressCriteriaTransfer $servicePointAddressCriteriaTransfer
-     *
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServicePointAddressQuery
-     */
     protected function applyServicePointAddressFilters(
         SpyServicePointAddressQuery $servicePointAddressQuery,
         ServicePointAddressCriteriaTransfer $servicePointAddressCriteriaTransfer
@@ -394,12 +361,6 @@ class ServicePointRepository extends AbstractRepository implements ServicePointR
         return $servicePointAddressQuery;
     }
 
-    /**
-     * @param \Orm\Zed\ServicePoint\Persistence\SpyServiceTypeQuery $serviceTypeQuery
-     * @param \Generated\Shared\Transfer\ServiceTypeCriteriaTransfer $serviceTypeCriteriaTransfer
-     *
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServiceTypeQuery
-     */
     protected function applyServiceTypeFilters(
         SpyServiceTypeQuery $serviceTypeQuery,
         ServiceTypeCriteriaTransfer $serviceTypeCriteriaTransfer
@@ -432,12 +393,6 @@ class ServicePointRepository extends AbstractRepository implements ServicePointR
         return $serviceTypeQuery;
     }
 
-    /**
-     * @param \Propel\Runtime\ActiveQuery\ModelCriteria $modelCriteria
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Propel\Runtime\ActiveQuery\ModelCriteria
-     */
     protected function applyPagination(
         ModelCriteria $modelCriteria,
         PaginationTransfer $paginationTransfer

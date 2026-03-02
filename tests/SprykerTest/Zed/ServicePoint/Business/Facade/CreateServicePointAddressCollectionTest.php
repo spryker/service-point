@@ -103,9 +103,6 @@ class CreateServicePointAddressCollectionTest extends Unit
      */
     protected const GLOSSARY_KEY_VALIDATION_SERVICE_POINT_ADDRESS_ALREADY_EXISTS = 'service_point.validation.service_point_address_already_exists';
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -113,9 +110,6 @@ class CreateServicePointAddressCollectionTest extends Unit
         $this->tester->ensureServicePointTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testCreatesServicePoint(): void
     {
         // Arrange
@@ -152,9 +146,6 @@ class CreateServicePointAddressCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testCreatesServicePointWithoutRegion(): void
     {
         // Arrange
@@ -189,9 +180,6 @@ class CreateServicePointAddressCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesCountryExistence(): void
     {
         // Arrange
@@ -218,9 +206,6 @@ class CreateServicePointAddressCollectionTest extends Unit
         $this->assertSame(0, $this->tester->getServicePointAddressQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesRegionExistence(): void
     {
         // Arrange
@@ -247,9 +232,6 @@ class CreateServicePointAddressCollectionTest extends Unit
         $this->assertSame(0, $this->tester->getServicePointAddressQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesServicePointExistence(): void
     {
         // Arrange
@@ -276,9 +258,6 @@ class CreateServicePointAddressCollectionTest extends Unit
         $this->assertSame(0, $this->tester->getServicePointAddressQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesServicePointUniqueness(): void
     {
         // Arrange
@@ -310,9 +289,6 @@ class CreateServicePointAddressCollectionTest extends Unit
         $this->assertSame(0, $this->tester->getServicePointAddressQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesServicePointHasSingleAddress(): void
     {
         // Arrange

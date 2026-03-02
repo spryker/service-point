@@ -53,9 +53,6 @@ class AddressLengthServicePointAddressValidatorRule implements ServicePointAddre
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(ErrorAdderInterface $errorAdder)
     {
         $this->errorAdder = $errorAdder;
@@ -104,13 +101,6 @@ class AddressLengthServicePointAddressValidatorRule implements ServicePointAddre
         return $postValidationErrorTransfers->count() > $initialErrorTransfers->count();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
-     * @param string $entityIdentifier
-     * @param string $glossaryKey
-     *
-     * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
-     */
     protected function addError(
         ErrorCollectionTransfer $errorCollectionTransfer,
         string $entityIdentifier,
@@ -127,11 +117,6 @@ class AddressLengthServicePointAddressValidatorRule implements ServicePointAddre
         );
     }
 
-    /**
-     * @param string $value
-     *
-     * @return bool
-     */
     protected function isServicePointAddressAttributeLengthValid(string $value): bool
     {
         return mb_strlen($value) >= static::ADDRESS_MIN_LENGTH

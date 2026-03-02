@@ -33,10 +33,6 @@ class ExistenceByUuidServicePointValidatorRule implements ServicePointValidatorR
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface $servicePointRepository
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(
         ServicePointRepositoryInterface $servicePointRepository,
         ErrorAdderInterface $errorAdder
@@ -80,11 +76,6 @@ class ExistenceByUuidServicePointValidatorRule implements ServicePointValidatorR
         return $postValidationErrorTransfers->count() > $initialErrorTransfers->count();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     *
-     * @return bool
-     */
     protected function hasServicePoint(ServicePointTransfer $servicePointTransfer): bool
     {
         $servicePointConditionsTransfer = (new ServicePointConditionsTransfer())

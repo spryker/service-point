@@ -28,11 +28,6 @@ class ServiceTypeValidator implements ServiceTypeValidatorInterface
         $this->serviceTypeValidatorRules = $serviceTypeValidatorRules;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTypeCollectionResponseTransfer $serviceTypeCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceTypeCollectionResponseTransfer
-     */
     public function validate(
         ServiceTypeCollectionResponseTransfer $serviceTypeCollectionResponseTransfer
     ): ServiceTypeCollectionResponseTransfer {
@@ -79,12 +74,6 @@ class ServiceTypeValidator implements ServiceTypeValidatorInterface
         return $serviceTypeValidatorRule->isTerminated($initialErrorTransfers, $postValidationErrorTransfers);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTypeCollectionResponseTransfer $serviceTypeCollectionResponseTransfer
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceTypeCollectionResponseTransfer
-     */
     protected function mergeErrors(
         ServiceTypeCollectionResponseTransfer $serviceTypeCollectionResponseTransfer,
         ErrorCollectionTransfer $errorCollectionTransfer

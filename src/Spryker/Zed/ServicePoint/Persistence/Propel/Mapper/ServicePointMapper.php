@@ -21,20 +21,11 @@ class ServicePointMapper
      */
     protected ServicePointAddressMapper $servicePointAddressMapper;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\Propel\Mapper\ServicePointAddressMapper $servicePointAddressMapper
-     */
     public function __construct(ServicePointAddressMapper $servicePointAddressMapper)
     {
         $this->servicePointAddressMapper = $servicePointAddressMapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     * @param \Orm\Zed\ServicePoint\Persistence\SpyServicePoint $servicePointEntity
-     *
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServicePoint
-     */
     public function mapServicePointTransferToServicePointEntity(
         ServicePointTransfer $servicePointTransfer,
         SpyServicePoint $servicePointEntity
@@ -42,12 +33,6 @@ class ServicePointMapper
         return $servicePointEntity->fromArray($servicePointTransfer->modifiedToArray());
     }
 
-    /**
-     * @param \Orm\Zed\ServicePoint\Persistence\SpyServicePoint $servicePointEntity
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointTransfer
-     */
     public function mapServicePointEntityToServicePointTransfer(
         SpyServicePoint $servicePointEntity,
         ServicePointTransfer $servicePointTransfer

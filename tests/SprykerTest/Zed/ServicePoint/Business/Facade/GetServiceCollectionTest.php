@@ -54,9 +54,6 @@ class GetServiceCollectionTest extends Unit
      */
     protected array $serviceTransfers;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -65,9 +62,6 @@ class GetServiceCollectionTest extends Unit
         $this->serviceTransfers = $this->createDummyServiceTransfers();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnEmptyServiceCollection(): void
     {
         // Arrange
@@ -91,9 +85,6 @@ class GetServiceCollectionTest extends Unit
         $this->assertNull($serviceCollectionTransfer->getPagination());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionByUuids(): void
     {
         // Arrange
@@ -128,9 +119,6 @@ class GetServiceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionByUuidsInversed(): void
     {
         // Arrange
@@ -167,9 +155,6 @@ class GetServiceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionByIds(): void
     {
         // Arrange
@@ -203,9 +188,6 @@ class GetServiceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionByKeys(): void
     {
         // Arrange
@@ -239,9 +221,6 @@ class GetServiceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionByServicePointUuids(): void
     {
         // Arrange
@@ -276,9 +255,6 @@ class GetServiceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionByServiceTypeUuids(): void
     {
         // Arrange
@@ -313,9 +289,6 @@ class GetServiceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionPaginatedByOffsetAndLimit(): void
     {
         // Arrange
@@ -345,9 +318,6 @@ class GetServiceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionPaginatedByPage(): void
     {
         // Arrange
@@ -374,9 +344,6 @@ class GetServiceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionSortedByFieldAsc(): void
     {
         // Arrange
@@ -410,9 +377,6 @@ class GetServiceCollectionTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionSortedByFieldDesc(): void
     {
         // Arrange
@@ -448,9 +412,6 @@ class GetServiceCollectionTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionWithServicePointAndServiceTypeRelations(): void
     {
         // Arrange
@@ -474,9 +435,6 @@ class GetServiceCollectionTest extends Unit
         $this->assertSame($serviceTransfer->getServicePoint()->toArray(), $resultServiceTransfer->getServicePoint()->toArray());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionByServicePointIds(): void
     {
         // Arrange
@@ -507,9 +465,6 @@ class GetServiceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionByIsActive(): void
     {
         // Arrange
@@ -548,9 +503,6 @@ class GetServiceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionByIsServicePointActive(): void
     {
         // Arrange
@@ -596,9 +548,6 @@ class GetServiceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceCollectionWithServicePointRelation(): void
     {
         // Arrange

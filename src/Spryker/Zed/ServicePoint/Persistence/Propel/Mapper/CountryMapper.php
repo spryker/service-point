@@ -14,12 +14,6 @@ use Orm\Zed\Country\Persistence\SpyRegion;
 
 class CountryMapper
 {
-    /**
-     * @param \Orm\Zed\Country\Persistence\SpyCountry $countryEntity
-     * @param \Generated\Shared\Transfer\CountryTransfer $countryTransfer
-     *
-     * @return \Generated\Shared\Transfer\CountryTransfer
-     */
     public function mapCountryEntityToCountryTransfer(
         SpyCountry $countryEntity,
         CountryTransfer $countryTransfer
@@ -27,12 +21,6 @@ class CountryMapper
         return $countryTransfer->fromArray($countryEntity->toArray(), true);
     }
 
-    /**
-     * @param \Orm\Zed\Country\Persistence\SpyRegion $regionEntity
-     * @param \Generated\Shared\Transfer\RegionTransfer $regionTransfer
-     *
-     * @return \Generated\Shared\Transfer\RegionTransfer
-     */
     public function mapRegionEntityToRegionTransfer(
         SpyRegion $regionEntity,
         RegionTransfer $regionTransfer

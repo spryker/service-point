@@ -34,11 +34,6 @@ class ServiceTypeUpdater implements ServiceTypeUpdaterInterface
      */
     protected ServiceTypeFilterInterface $serviceTypeFilter;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointEntityManagerInterface $servicePointEntityManager
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\ServiceTypeValidatorInterface $serviceTypeValidator
-     * @param \Spryker\Zed\ServicePoint\Business\Filter\ServiceTypeFilterInterface $serviceTypeFilter
-     */
     public function __construct(
         ServicePointEntityManagerInterface $servicePointEntityManager,
         ServiceTypeValidatorInterface $serviceTypeValidator,
@@ -49,11 +44,6 @@ class ServiceTypeUpdater implements ServiceTypeUpdaterInterface
         $this->serviceTypeFilter = $serviceTypeFilter;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTypeCollectionRequestTransfer $serviceTypeCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceTypeCollectionResponseTransfer
-     */
     public function updateServiceTypeCollection(
         ServiceTypeCollectionRequestTransfer $serviceTypeCollectionRequestTransfer
     ): ServiceTypeCollectionResponseTransfer {
@@ -110,11 +100,6 @@ class ServiceTypeUpdater implements ServiceTypeUpdaterInterface
         return $persistedServiceTypeTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTypeCollectionRequestTransfer $serviceTypeCollectionRequestTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredFields(ServiceTypeCollectionRequestTransfer $serviceTypeCollectionRequestTransfer): void
     {
         $serviceTypeCollectionRequestTransfer

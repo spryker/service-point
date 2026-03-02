@@ -26,22 +26,12 @@ class ServiceMapper
      */
     protected ServicePointMapper $servicePointMapper;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\Propel\Mapper\ServiceTypeMapper $serviceTypeMapper
-     * @param \Spryker\Zed\ServicePoint\Persistence\Propel\Mapper\ServicePointMapper $servicePointMapper
-     */
     public function __construct(ServiceTypeMapper $serviceTypeMapper, ServicePointMapper $servicePointMapper)
     {
         $this->serviceTypeMapper = $serviceTypeMapper;
         $this->servicePointMapper = $servicePointMapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTransfer $serviceTransfer
-     * @param \Orm\Zed\ServicePoint\Persistence\SpyService $serviceEntity
-     *
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyService
-     */
     public function mapServiceTransferToServiceEntity(
         ServiceTransfer $serviceTransfer,
         SpyService $serviceEntity
@@ -54,12 +44,6 @@ class ServiceMapper
             ->setFkServiceType($idServiceType);
     }
 
-    /**
-     * @param \Orm\Zed\ServicePoint\Persistence\SpyService $serviceEntity
-     * @param \Generated\Shared\Transfer\ServiceTransfer $serviceTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceTransfer
-     */
     public function mapServiceEntityToServiceTransfer(
         SpyService $serviceEntity,
         ServiceTransfer $serviceTransfer

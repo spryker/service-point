@@ -47,13 +47,6 @@ class ServicePointAddressUpdater implements ServicePointAddressUpdaterInterface
      */
     protected ServicePointExpanderInterface $servicePointExpander;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointEntityManagerInterface $servicePointEntityManager
-     * @param \Spryker\Zed\ServicePoint\Business\Filter\ServicePointAddressFilterInterface $servicePointAddressFilter
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\ServicePointAddressValidatorInterface $servicePointAddressValidator
-     * @param \Spryker\Zed\ServicePoint\Business\Expander\CountryExpanderInterface $countryExpander
-     * @param \Spryker\Zed\ServicePoint\Business\Expander\ServicePointExpanderInterface $servicePointExpander
-     */
     public function __construct(
         ServicePointEntityManagerInterface $servicePointEntityManager,
         ServicePointAddressFilterInterface $servicePointAddressFilter,
@@ -68,11 +61,6 @@ class ServicePointAddressUpdater implements ServicePointAddressUpdaterInterface
         $this->servicePointExpander = $servicePointExpander;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressCollectionRequestTransfer $servicePointAddressCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointAddressCollectionResponseTransfer
-     */
     public function updateServicePointAddressCollection(
         ServicePointAddressCollectionRequestTransfer $servicePointAddressCollectionRequestTransfer
     ): ServicePointAddressCollectionResponseTransfer {
@@ -123,11 +111,6 @@ class ServicePointAddressUpdater implements ServicePointAddressUpdaterInterface
         return $persistedServicePointAddressTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressCollectionRequestTransfer $servicePointAddressCollectionRequestTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredFields(ServicePointAddressCollectionRequestTransfer $servicePointAddressCollectionRequestTransfer): void
     {
         $servicePointAddressCollectionRequestTransfer

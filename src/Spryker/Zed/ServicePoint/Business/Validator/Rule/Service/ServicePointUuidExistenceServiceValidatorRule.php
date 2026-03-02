@@ -32,10 +32,6 @@ class ServicePointUuidExistenceServiceValidatorRule implements ServiceValidatorR
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface $servicePointRepository
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(
         ServicePointRepositoryInterface $servicePointRepository,
         ErrorAdderInterface $errorAdder
@@ -66,11 +62,6 @@ class ServicePointUuidExistenceServiceValidatorRule implements ServiceValidatorR
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     *
-     * @return bool
-     */
     protected function hasServicePointWithUuid(ServicePointTransfer $servicePointTransfer): bool
     {
         $servicePointConditionsTransfer = (new ServicePointConditionsTransfer())

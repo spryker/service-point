@@ -84,9 +84,6 @@ class CreateServiceTypeCollectionTest extends Unit
      */
     protected ServicePointBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -94,9 +91,6 @@ class CreateServiceTypeCollectionTest extends Unit
         $this->tester->ensureServicePointTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCreateServiceType(): void
     {
         // Arrange
@@ -120,9 +114,6 @@ class CreateServiceTypeCollectionTest extends Unit
         $this->assertEquals($serviceTypeTransfer, $persistedServiceTypeTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateKeyExistence(): void
     {
         // Arrange
@@ -151,9 +142,6 @@ class CreateServiceTypeCollectionTest extends Unit
         $this->assertSame(1, $this->tester->getServiceTypeQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateKeyUniqueness(): void
     {
         // Arrange
@@ -218,9 +206,6 @@ class CreateServiceTypeCollectionTest extends Unit
         $this->assertSame(0, $this->tester->getServiceTypeQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateNameExistence(): void
     {
         // Arrange
@@ -249,9 +234,6 @@ class CreateServiceTypeCollectionTest extends Unit
         $this->assertSame(1, $this->tester->getServiceTypeQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldValidateNameUniqueness(): void
     {
         // Arrange
@@ -316,9 +298,6 @@ class CreateServiceTypeCollectionTest extends Unit
         $this->assertSame(0, $this->tester->getServiceTypeQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCreateServiceTypesForNonTransactionalMode(): void
     {
         // Arrange
@@ -348,9 +327,6 @@ class CreateServiceTypeCollectionTest extends Unit
         $this->assertSame(1, $this->tester->getServiceTypeQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenIsTransactionIsNotSet(): void
     {
         // Arrange
@@ -366,9 +342,6 @@ class CreateServiceTypeCollectionTest extends Unit
         $this->tester->getFacade()->createServiceTypeCollection($serviceTypeCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenServiceTypesAreNotSet(): void
     {
         // Arrange
@@ -382,9 +355,6 @@ class CreateServiceTypeCollectionTest extends Unit
         $this->tester->getFacade()->createServiceTypeCollection($serviceTypeCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenServiceTypeKeyIsNotSet(): void
     {
         // Arrange
@@ -403,9 +373,6 @@ class CreateServiceTypeCollectionTest extends Unit
         $this->tester->getFacade()->createServiceTypeCollection($serviceTypeCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenServiceTypeNameIsNotSet(): void
     {
         // Arrange

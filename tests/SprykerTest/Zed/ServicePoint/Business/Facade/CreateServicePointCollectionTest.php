@@ -74,9 +74,6 @@ class CreateServicePointCollectionTest extends Unit
      */
     protected ServicePointBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -84,9 +81,6 @@ class CreateServicePointCollectionTest extends Unit
         $this->tester->ensureServicePointTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testCreatesServicePoint(): void
     {
         // Arrange
@@ -114,9 +108,6 @@ class CreateServicePointCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesKeyExistence(): void
     {
         // Arrange
@@ -146,9 +137,6 @@ class CreateServicePointCollectionTest extends Unit
         $this->assertSame(1, $this->tester->getServicePointQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesKeyUniqueness(): void
     {
         // Arrange
@@ -250,9 +238,6 @@ class CreateServicePointCollectionTest extends Unit
         $this->assertSame(0, $this->tester->getServicePointQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesStoreExistence(): void
     {
         // Arrange
@@ -281,9 +266,6 @@ class CreateServicePointCollectionTest extends Unit
         $this->assertSame(0, $this->tester->getServicePointQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testCreatesValidServicePointsForNonTransactionalMode(): void
     {
         // Arrange
@@ -315,9 +297,6 @@ class CreateServicePointCollectionTest extends Unit
         $this->assertSame(1, $this->tester->getServicePointQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenIsTransactionIsNotSet(): void
     {
         // Arrange
@@ -332,9 +311,6 @@ class CreateServicePointCollectionTest extends Unit
         $this->tester->getFacade()->createServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointsAreNotSet(): void
     {
         // Arrange
@@ -348,9 +324,6 @@ class CreateServicePointCollectionTest extends Unit
         $this->tester->getFacade()->createServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointKeyIsNotSet(): void
     {
         // Arrange
@@ -368,9 +341,6 @@ class CreateServicePointCollectionTest extends Unit
         $this->tester->getFacade()->createServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointNameIsNotSet(): void
     {
         // Arrange
@@ -388,9 +358,6 @@ class CreateServicePointCollectionTest extends Unit
         $this->tester->getFacade()->createServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointIsActiveIsNotSet(): void
     {
         // Arrange
@@ -408,9 +375,6 @@ class CreateServicePointCollectionTest extends Unit
         $this->tester->getFacade()->createServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointStoreRelationIsNotSet(): void
     {
         // Arrange
@@ -426,9 +390,6 @@ class CreateServicePointCollectionTest extends Unit
         $this->tester->getFacade()->createServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointStoresAreNotSet(): void
     {
         // Arrange
@@ -446,9 +407,6 @@ class CreateServicePointCollectionTest extends Unit
         $this->tester->getFacade()->createServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointStoreNameIsNotSet(): void
     {
         // Arrange

@@ -28,11 +28,6 @@ class ServicePointAddressValidator implements ServicePointAddressValidatorInterf
         $this->servicePointAddressValidatorRules = $servicePointAddressValidatorRules;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressCollectionResponseTransfer $servicePointAddressCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointAddressCollectionResponseTransfer
-     */
     public function validate(
         ServicePointAddressCollectionResponseTransfer $servicePointAddressCollectionResponseTransfer
     ): ServicePointAddressCollectionResponseTransfer {
@@ -79,12 +74,6 @@ class ServicePointAddressValidator implements ServicePointAddressValidatorInterf
         return $servicePointAddressValidatorRule->isTerminated($initialErrorTransfers, $postValidationErrorTransfers);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressCollectionResponseTransfer $servicePointAddressCollectionResponseTransfer
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointAddressCollectionResponseTransfer
-     */
     protected function mergeErrors(
         ServicePointAddressCollectionResponseTransfer $servicePointAddressCollectionResponseTransfer,
         ErrorCollectionTransfer $errorCollectionTransfer

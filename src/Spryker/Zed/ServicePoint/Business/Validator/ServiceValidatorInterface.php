@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\ServiceCollectionResponseTransfer;
 
 interface ServiceValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServiceCollectionResponseTransfer $serviceCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceCollectionResponseTransfer
-     */
     public function validate(
         ServiceCollectionResponseTransfer $serviceCollectionResponseTransfer
     ): ServiceCollectionResponseTransfer;

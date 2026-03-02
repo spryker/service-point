@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\CountryCriteriaTransfer;
 
 interface ServicePointToCountryFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CountryCriteriaTransfer $countryCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CountryCollectionTransfer
-     */
     public function getCountryCollection(
         CountryCriteriaTransfer $countryCriteriaTransfer
     ): CountryCollectionTransfer;

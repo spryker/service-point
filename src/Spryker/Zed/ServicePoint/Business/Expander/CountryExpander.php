@@ -20,19 +20,11 @@ class CountryExpander implements CountryExpanderInterface
      */
     protected ServicePointToCountryFacadeInterface $countryFacade;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Dependency\Facade\ServicePointToCountryFacadeInterface $countryFacade
-     */
     public function __construct(ServicePointToCountryFacadeInterface $countryFacade)
     {
         $this->countryFacade = $countryFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressCollectionTransfer $servicePointAddressCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointAddressCollectionTransfer
-     */
     public function expandServicePointAddressCollectionWithCountriesAndRegions(
         ServicePointAddressCollectionTransfer $servicePointAddressCollectionTransfer
     ): ServicePointAddressCollectionTransfer {

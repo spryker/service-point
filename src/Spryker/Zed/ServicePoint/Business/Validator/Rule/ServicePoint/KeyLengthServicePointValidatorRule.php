@@ -44,9 +44,6 @@ class KeyLengthServicePointValidatorRule implements ServicePointValidatorRuleInt
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(ErrorAdderInterface $errorAdder)
     {
         $this->errorAdder = $errorAdder;
@@ -91,11 +88,6 @@ class KeyLengthServicePointValidatorRule implements ServicePointValidatorRuleInt
         return $postValidationErrorTransfers->count() > $initialErrorTransfers->count();
     }
 
-    /**
-     * @param string $key
-     *
-     * @return bool
-     */
     protected function isServicePointKeyLengthValid(string $key): bool
     {
         return mb_strlen($key) >= static::SERVICE_POINT_KEY_MIN_LENGTH

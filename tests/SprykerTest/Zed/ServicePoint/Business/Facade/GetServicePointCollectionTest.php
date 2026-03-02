@@ -38,9 +38,6 @@ class GetServicePointCollectionTest extends Unit
      */
     protected ServicePointBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -48,9 +45,6 @@ class GetServicePointCollectionTest extends Unit
         $this->tester->ensureServicePointTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsByUuids(): void
     {
         // Arrange
@@ -80,9 +74,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertNull($servicePointCollectionTransfer->getPagination());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsByUuidsInversed(): void
     {
         // Arrange
@@ -113,9 +104,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertNull($servicePointCollectionTransfer->getPagination());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsByKeys(): void
     {
         // Arrange
@@ -147,9 +135,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertNull($servicePointCollectionTransfer->getPagination());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsByServicePointIds(): void
     {
         // Arrange
@@ -181,9 +166,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertNull($servicePointCollectionTransfer->getPagination());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsByIsActiveParameter(): void
     {
         // Arrange
@@ -214,9 +196,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertNull($servicePointCollectionTransfer->getPagination());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsByStoreNames(): void
     {
         // Arrange
@@ -250,9 +229,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertNull($servicePointCollectionTransfer->getPagination());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsWithStoreRelations(): void
     {
         // Arrange
@@ -286,9 +262,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertNull($servicePointCollectionTransfer->getPagination());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsByLimitAndOffset(): void
     {
         // Arrange
@@ -316,9 +289,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertSame(4, $servicePointCollectionTransfer->getPaginationOrFail()->getNbResultsOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsByPagination(): void
     {
         // Arrange
@@ -361,9 +331,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertSame(1, $paginationTransfer->getPreviousPageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsSortedByFieldDesc(): void
     {
         // Arrange
@@ -402,9 +369,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertSame('abc', $servicePointTransfers->getIterator()->offsetGet(2)->getKeyOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsSortedByFieldAsc(): void
     {
         // Arrange
@@ -443,9 +407,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertSame('cab', $servicePointTransfers->getIterator()->offsetGet(2)->getKeyOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsWithoutAddressRelation(): void
     {
         // Arrange
@@ -468,9 +429,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertNull($servicePointCollectionTransfer->getServicePoints()->getIterator()->current()->getAddress());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsWithAddressRelation(): void
     {
         // Arrange
@@ -501,9 +459,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertSame($servicePointAddressTransfer->getServicePoint()->getUuid(), $retrievedServicePointAddressTransfer->getServicePoint()->getUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsOneServicePointWithAddressRelationAndOneServicePointWithoutAddressRelation(): void
     {
         // Arrange
@@ -535,9 +490,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertNotNull($servicePointCollectionTransfer->getServicePoints()->offsetGet(1)->getAddress());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointsWithServiceRelations(): void
     {
         // Arrange
@@ -599,9 +551,6 @@ class GetServicePointCollectionTest extends Unit
         $this->assertCount(0, $resultSecondServicePointTransfer->getServices());
     }
 
-    /**
-     * @return void
-     */
     public function testSearchesServicePointsByKey(): void
     {
         // Arrange
@@ -626,9 +575,6 @@ class GetServicePointCollectionTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testSearchesServicePointsByName(): void
     {
         // Arrange
@@ -653,9 +599,6 @@ class GetServicePointCollectionTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testSearchesServicePointsByKeyAndName(): void
     {
         // Arrange

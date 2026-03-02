@@ -44,9 +44,6 @@ class NameLengthServicePointValidatorRule implements ServicePointValidatorRuleIn
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(ErrorAdderInterface $errorAdder)
     {
         $this->errorAdder = $errorAdder;
@@ -91,11 +88,6 @@ class NameLengthServicePointValidatorRule implements ServicePointValidatorRuleIn
         return $postValidationErrorTransfers->count() > $initialErrorTransfers->count();
     }
 
-    /**
-     * @param string $name
-     *
-     * @return bool
-     */
     protected function isServicePointNameLengthValid(string $name): bool
     {
         return mb_strlen($name) >= static::SERVICE_POINT_NAME_MIN_LENGTH

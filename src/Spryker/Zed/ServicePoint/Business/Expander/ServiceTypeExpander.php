@@ -20,9 +20,6 @@ class ServiceTypeExpander implements ServiceTypeExpanderInterface
      */
     protected ServicePointRepositoryInterface $servicePointRepository;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface $servicePointRepository
-     */
     public function __construct(ServicePointRepositoryInterface $servicePointRepository)
     {
         $this->servicePointRepository = $servicePointRepository;

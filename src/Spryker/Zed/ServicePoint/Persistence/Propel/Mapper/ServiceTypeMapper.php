@@ -14,12 +14,6 @@ use Propel\Runtime\Collection\ObjectCollection;
 
 class ServiceTypeMapper
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTypeTransfer $serviceTypeTransfer
-     * @param \Orm\Zed\ServicePoint\Persistence\SpyServiceType $serviceTypeEntity
-     *
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServiceType
-     */
     public function mapServiceTypeTransferToServiceTypeEntity(
         ServiceTypeTransfer $serviceTypeTransfer,
         SpyServiceType $serviceTypeEntity
@@ -29,12 +23,6 @@ class ServiceTypeMapper
         );
     }
 
-    /**
-     * @param \Orm\Zed\ServicePoint\Persistence\SpyServiceType $serviceTypeEntity
-     * @param \Generated\Shared\Transfer\ServiceTypeTransfer $serviceTypeTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceTypeTransfer
-     */
     public function mapServiceTypeEntityToServiceTypeTransfer(
         SpyServiceType $serviceTypeEntity,
         ServiceTypeTransfer $serviceTypeTransfer

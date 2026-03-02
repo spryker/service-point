@@ -32,10 +32,6 @@ class NameExistenceServiceTypeValidatorRule implements ServiceTypeValidatorRuleI
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface $servicePointRepository
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(
         ServicePointRepositoryInterface $servicePointRepository,
         ErrorAdderInterface $errorAdder
@@ -66,11 +62,6 @@ class NameExistenceServiceTypeValidatorRule implements ServiceTypeValidatorRuleI
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTypeTransfer $serviceTypeTransfer
-     *
-     * @return bool
-     */
     protected function hasServiceTypeWithName(ServiceTypeTransfer $serviceTypeTransfer): bool
     {
         $serviceTypeConditionsTransfer = (new ServiceTypeConditionsTransfer())

@@ -30,11 +30,6 @@ class ServicePointReader implements ServicePointReaderInterface
      */
     protected ServiceRelationExpanderInterface $serviceRelationExpander;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface $servicePointRepository
-     * @param \Spryker\Zed\ServicePoint\Business\Expander\ServicePointStoreRelationExpanderInterface $servicePointStoreRelationExpander
-     * @param \Spryker\Zed\ServicePoint\Business\Expander\ServiceRelationExpanderInterface $serviceRelationExpander
-     */
     public function __construct(
         ServicePointRepositoryInterface $servicePointRepository,
         ServicePointStoreRelationExpanderInterface $servicePointStoreRelationExpander,
@@ -45,11 +40,6 @@ class ServicePointReader implements ServicePointReaderInterface
         $this->serviceRelationExpander = $serviceRelationExpander;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCriteriaTransfer $servicePointCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointCollectionTransfer
-     */
     public function getServicePointCollection(
         ServicePointCriteriaTransfer $servicePointCriteriaTransfer
     ): ServicePointCollectionTransfer {

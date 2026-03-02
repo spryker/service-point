@@ -53,10 +53,6 @@ class CountryAndRegionExistenceByIso2CodeServicePointAddressValidatorRule implem
      */
     protected ServicePointToCountryFacadeInterface $countryFacade;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Dependency\Facade\ServicePointToCountryFacadeInterface $countryFacade
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(
         ServicePointToCountryFacadeInterface $countryFacade,
         ErrorAdderInterface $errorAdder
@@ -123,12 +119,6 @@ class CountryAndRegionExistenceByIso2CodeServicePointAddressValidatorRule implem
         return $postValidationErrorTransfers->count() > $initialErrorTransfers->count();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CountryTransfer $countryTransfer
-     * @param \Generated\Shared\Transfer\RegionTransfer $regionTransfer
-     *
-     * @return bool
-     */
     protected function hasRegionByCountry(CountryTransfer $countryTransfer, RegionTransfer $regionTransfer): bool
     {
         $expectedUuid = $regionTransfer->getUuidOrFail();
@@ -142,11 +132,6 @@ class CountryAndRegionExistenceByIso2CodeServicePointAddressValidatorRule implem
         return false;
     }
 
-    /**
-     * @param string $countryIso2Code
-     *
-     * @return \Generated\Shared\Transfer\CountryTransfer|null
-     */
     protected function findCountryByIso2Code(string $countryIso2Code): ?CountryTransfer
     {
         $countryConditionsTransfer = (new CountryConditionsTransfer())

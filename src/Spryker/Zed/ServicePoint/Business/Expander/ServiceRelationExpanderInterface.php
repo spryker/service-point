@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\ServicePointCollectionTransfer;
 
 interface ServiceRelationExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCollectionTransfer $servicePointCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointCollectionTransfer
-     */
     public function expandServicePointCollectionWithServiceRelations(
         ServicePointCollectionTransfer $servicePointCollectionTransfer
     ): ServicePointCollectionTransfer;

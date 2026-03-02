@@ -25,11 +25,6 @@ class ServicePointToCountryFacadeBridge implements ServicePointToCountryFacadeIn
         $this->countryFacade = $countryFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CountryCriteriaTransfer $countryCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CountryCollectionTransfer
-     */
     public function getCountryCollection(
         CountryCriteriaTransfer $countryCriteriaTransfer
     ): CountryCollectionTransfer {

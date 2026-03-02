@@ -44,9 +44,6 @@ class NameLengthServiceTypeValidatorRule implements ServiceTypeValidatorRuleInte
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(ErrorAdderInterface $errorAdder)
     {
         $this->errorAdder = $errorAdder;
@@ -90,11 +87,6 @@ class NameLengthServiceTypeValidatorRule implements ServiceTypeValidatorRuleInte
         return $postValidationErrorTransfers->count() > $initialErrorTransfers->count();
     }
 
-    /**
-     * @param string $name
-     *
-     * @return bool
-     */
     protected function isServiceTypeNameLengthValid(string $name): bool
     {
         return mb_strlen($name) >= static::SERVICE_TYPE_NAME_MIN_LENGTH

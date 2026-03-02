@@ -46,13 +46,6 @@ class ServiceCreator implements ServiceCreatorInterface
      */
     protected ServiceTypeExpanderInterface $serviceTypeExpander;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointEntityManagerInterface $servicePointEntityManager
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\ServiceValidatorInterface $serviceValidator
-     * @param \Spryker\Zed\ServicePoint\Business\Filter\ServiceFilterInterface $serviceFilter
-     * @param \Spryker\Zed\ServicePoint\Business\Expander\ServicePointExpanderInterface $servicePointExpander
-     * @param \Spryker\Zed\ServicePoint\Business\Expander\ServiceTypeExpanderInterface $serviceTypeExpander
-     */
     public function __construct(
         ServicePointEntityManagerInterface $servicePointEntityManager,
         ServiceValidatorInterface $serviceValidator,
@@ -67,11 +60,6 @@ class ServiceCreator implements ServiceCreatorInterface
         $this->serviceTypeExpander = $serviceTypeExpander;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceCollectionRequestTransfer $serviceCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceCollectionResponseTransfer
-     */
     public function createServiceCollection(
         ServiceCollectionRequestTransfer $serviceCollectionRequestTransfer
     ): ServiceCollectionResponseTransfer {
@@ -123,11 +111,6 @@ class ServiceCreator implements ServiceCreatorInterface
         return $persistedServiceTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceCollectionRequestTransfer $serviceCollectionRequestTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredFields(ServiceCollectionRequestTransfer $serviceCollectionRequestTransfer): void
     {
         $serviceCollectionRequestTransfer

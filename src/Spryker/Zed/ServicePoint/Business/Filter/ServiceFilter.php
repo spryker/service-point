@@ -18,9 +18,6 @@ class ServiceFilter implements ServiceFilterInterface
      */
     protected ErrorExtractorInterface $errorExtractor;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Business\Extractor\ErrorExtractorInterface $errorExtractor
-     */
     public function __construct(ErrorExtractorInterface $errorExtractor)
     {
         $this->errorExtractor = $errorExtractor;

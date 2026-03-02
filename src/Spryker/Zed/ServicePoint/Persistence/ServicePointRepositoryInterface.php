@@ -18,11 +18,6 @@ use Generated\Shared\Transfer\ServiceTypeCriteriaTransfer;
 
 interface ServicePointRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCriteriaTransfer $servicePointCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointCollectionTransfer
-     */
     public function getServicePointCollection(
         ServicePointCriteriaTransfer $servicePointCriteriaTransfer
     ): ServicePointCollectionTransfer;
@@ -41,29 +36,14 @@ interface ServicePointRepositoryInterface
      */
     public function getServicePointStoresGroupedByIdServicePoint(array $servicePointIds): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressCriteriaTransfer $servicePointAddressCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointAddressCollectionTransfer
-     */
     public function getServicePointAddressCollection(
         ServicePointAddressCriteriaTransfer $servicePointAddressCriteriaTransfer
     ): ServicePointAddressCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceCriteriaTransfer $serviceCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceCollectionTransfer
-     */
     public function getServiceCollection(
         ServiceCriteriaTransfer $serviceCriteriaTransfer
     ): ServiceCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTypeCriteriaTransfer $serviceTypeCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceTypeCollectionTransfer
-     */
     public function getServiceTypeCollection(
         ServiceTypeCriteriaTransfer $serviceTypeCriteriaTransfer
     ): ServiceTypeCollectionTransfer;

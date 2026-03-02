@@ -95,9 +95,6 @@ class UpdateServicePointCollectionTest extends Unit
      */
     protected ServicePointBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -105,9 +102,6 @@ class UpdateServicePointCollectionTest extends Unit
         $this->tester->ensureServicePointTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatesServicePoint(): void
     {
         // Arrange
@@ -145,9 +139,6 @@ class UpdateServicePointCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesKeyExistence(): void
     {
         // Arrange
@@ -178,9 +169,6 @@ class UpdateServicePointCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_POINT_KEY_EXISTS, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesKeyUniqueness(): void
     {
         // Arrange
@@ -274,9 +262,6 @@ class UpdateServicePointCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_POINT_NAME_WRONG_LENGTH, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatesStoreExistence(): void
     {
         $servicePointTransfer = $this->tester->createServicePointTransferWithStoreRelation(static::STORE_NAME_DE);
@@ -305,9 +290,6 @@ class UpdateServicePointCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_STORE_DOES_NOT_EXIST, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testUpdatesValidServicePointsForNonTransactionalMode(): void
     {
         // Arrange
@@ -337,9 +319,6 @@ class UpdateServicePointCollectionTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_VALIDATION_SERVICE_POINT_NAME_WRONG_LENGTH, $errorTransfer->getMessageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenIsTransactionIsNotSet(): void
     {
         // Arrange
@@ -356,9 +335,6 @@ class UpdateServicePointCollectionTest extends Unit
             ->updateServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointsAreNotSet(): void
     {
         // Arrange
@@ -374,9 +350,6 @@ class UpdateServicePointCollectionTest extends Unit
             ->updateServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointUuidIsNotSet(): void
     {
         // Arrange
@@ -396,9 +369,6 @@ class UpdateServicePointCollectionTest extends Unit
             ->updateServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointKeyIsNotSet(): void
     {
         // Arrange
@@ -418,9 +388,6 @@ class UpdateServicePointCollectionTest extends Unit
             ->updateServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointNameIsNotSet(): void
     {
         // Arrange
@@ -440,9 +407,6 @@ class UpdateServicePointCollectionTest extends Unit
             ->updateServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointIsActiveIsNotSet(): void
     {
         // Arrange
@@ -462,9 +426,6 @@ class UpdateServicePointCollectionTest extends Unit
             ->updateServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointStoreRelationIsNotSet(): void
     {
         // Arrange
@@ -482,9 +443,6 @@ class UpdateServicePointCollectionTest extends Unit
             ->updateServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointStoresAreNotSet(): void
     {
         // Arrange
@@ -504,9 +462,6 @@ class UpdateServicePointCollectionTest extends Unit
             ->updateServicePointCollection($servicePointCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsExceptionWhenServicePointStoreNameIsNotSet(): void
     {
         // Arrange

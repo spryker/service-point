@@ -42,11 +42,6 @@ class StoreExistenceServicePointValidatorRule implements ServicePointValidatorRu
      */
     protected ServicePointStoreExtractorInterface $servicePointStoreExtractor;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Dependency\Facade\ServicePointToStoreFacadeInterface $storeFacade
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     * @param \Spryker\Zed\ServicePoint\Business\Extractor\ServicePointStoreExtractorInterface $servicePointStoreExtractor
-     */
     public function __construct(
         ServicePointToStoreFacadeInterface $storeFacade,
         ErrorAdderInterface $errorAdder,

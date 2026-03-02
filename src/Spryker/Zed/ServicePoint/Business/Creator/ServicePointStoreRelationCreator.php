@@ -33,11 +33,6 @@ class ServicePointStoreRelationCreator implements ServicePointStoreRelationCreat
      */
     protected ServicePointStoreExtractorInterface $servicePointStoreExtractor;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Dependency\Facade\ServicePointToStoreFacadeInterface $storeFacade
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointEntityManagerInterface $servicePointEntityManager
-     * @param \Spryker\Zed\ServicePoint\Business\Extractor\ServicePointStoreExtractorInterface $servicePointStoreExtractor
-     */
     public function __construct(
         ServicePointToStoreFacadeInterface $storeFacade,
         ServicePointEntityManagerInterface $servicePointEntityManager,
@@ -48,11 +43,6 @@ class ServicePointStoreRelationCreator implements ServicePointStoreRelationCreat
         $this->servicePointStoreExtractor = $servicePointStoreExtractor;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointTransfer
-     */
     public function createServicePointStoreRelations(ServicePointTransfer $servicePointTransfer): ServicePointTransfer
     {
         $storeNames = $this->servicePointStoreExtractor->extractStoreNamesFromStoreRelationTransfer(

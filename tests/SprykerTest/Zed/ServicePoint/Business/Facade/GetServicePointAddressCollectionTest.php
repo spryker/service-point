@@ -33,9 +33,6 @@ class GetServicePointAddressCollectionTest extends Unit
      */
     protected ServicePointBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -43,9 +40,6 @@ class GetServicePointAddressCollectionTest extends Unit
         $this->tester->ensureServicePointTablesAreEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointAddressesByServicePointUuids(): void
     {
         // Arrange
@@ -85,9 +79,6 @@ class GetServicePointAddressCollectionTest extends Unit
         $this->assertNull($servicePointAddressCollectionTransfer->getPagination());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointAddressesByUuids(): void
     {
         // Arrange
@@ -124,9 +115,6 @@ class GetServicePointAddressCollectionTest extends Unit
         $this->assertNull($servicePointAddressCollectionTransfer->getPagination());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointAddressesByLimitAndOffset(): void
     {
         // Arrange
@@ -154,9 +142,6 @@ class GetServicePointAddressCollectionTest extends Unit
         $this->assertSame($servicePointAddressCount, $servicePointAddressCollectionTransfer->getPaginationOrFail()->getNbResultsOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointAddressesByPagination(): void
     {
         // Arrange
@@ -196,9 +181,6 @@ class GetServicePointAddressCollectionTest extends Unit
         $this->assertSame(1, $paginationTransfer->getPreviousPageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointAddressesSortedByFieldDesc(): void
     {
         // Arrange
@@ -232,9 +214,6 @@ class GetServicePointAddressCollectionTest extends Unit
         $this->assertSame('abc', $servicePointAddressTransfers->getIterator()->offsetGet(2)->getAddress1OrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsServicePointAddressesSortedByFieldAsc(): void
     {
         // Arrange

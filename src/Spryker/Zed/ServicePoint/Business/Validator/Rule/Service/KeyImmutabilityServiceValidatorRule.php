@@ -33,10 +33,6 @@ class KeyImmutabilityServiceValidatorRule implements ServiceValidatorRuleInterfa
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface $servicePointRepository
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(
         ServicePointRepositoryInterface $servicePointRepository,
         ErrorAdderInterface $errorAdder
@@ -80,11 +76,6 @@ class KeyImmutabilityServiceValidatorRule implements ServiceValidatorRuleInterfa
         return $postValidationErrorTransfers->count() > $initialErrorTransfers->count();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTransfer $serviceTransfer
-     *
-     * @return bool
-     */
     protected function hasChangedServiceKey(ServiceTransfer $serviceTransfer): bool
     {
         $serviceConditionsTransfer = (new ServiceConditionsTransfer())

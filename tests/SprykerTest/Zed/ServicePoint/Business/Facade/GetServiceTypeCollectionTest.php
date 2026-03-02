@@ -48,9 +48,6 @@ class GetServiceTypeCollectionTest extends Unit
      */
     protected array $serviceTypeTransfers;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -59,9 +56,6 @@ class GetServiceTypeCollectionTest extends Unit
         $this->serviceTypeTransfers = $this->createDummyServiceTypeTransfers();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnEmptyServiceTypeCollection(): void
     {
         // Arrange
@@ -85,9 +79,6 @@ class GetServiceTypeCollectionTest extends Unit
         $this->assertNull($serviceTypeCollectionTransfer->getPagination());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceTypeCollectionByUuids(): void
     {
         // Arrange
@@ -122,9 +113,6 @@ class GetServiceTypeCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceTypeCollectionByUuidsInversed(): void
     {
         // Arrange
@@ -161,9 +149,6 @@ class GetServiceTypeCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceTypeCollectionByIds(): void
     {
         // Arrange
@@ -197,9 +182,6 @@ class GetServiceTypeCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceTypeCollectionByNames(): void
     {
         // Arrange
@@ -234,9 +216,6 @@ class GetServiceTypeCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceTypeCollectionByKeys(): void
     {
         // Arrange
@@ -271,9 +250,6 @@ class GetServiceTypeCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceTypeCollectionPaginatedByOffsetAndLimit(): void
     {
         // Arrange
@@ -303,9 +279,6 @@ class GetServiceTypeCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceTypeCollectionPaginatedByPage(): void
     {
         // Arrange
@@ -332,9 +305,6 @@ class GetServiceTypeCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceTypeCollectionSortedByFieldAsc(): void
     {
         // Arrange
@@ -368,9 +338,6 @@ class GetServiceTypeCollectionTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnServiceTypeCollectionSortedByFieldDesc(): void
     {
         // Arrange

@@ -12,20 +12,10 @@ use Generated\Shared\Transfer\ServicePointCollectionTransfer;
 
 interface ServicePointStoreRelationExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCollectionTransfer $servicePointCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointCollectionTransfer
-     */
     public function expandServicePointCollectionWithStoreRelations(
         ServicePointCollectionTransfer $servicePointCollectionTransfer
     ): ServicePointCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceCollectionTransfer $serviceCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceCollectionTransfer
-     */
     public function expandServiceCollectionWithServicePointStoreRelations(
         ServiceCollectionTransfer $serviceCollectionTransfer
     ): ServiceCollectionTransfer;

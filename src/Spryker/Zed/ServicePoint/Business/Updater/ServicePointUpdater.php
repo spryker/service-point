@@ -40,12 +40,6 @@ class ServicePointUpdater implements ServicePointUpdaterInterface
      */
     protected ServicePointFilterInterface $servicePointFilter;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Business\Updater\ServicePointStoreRelationUpdaterInterface $servicePointStoreRelationUpdater
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointEntityManagerInterface $servicePointEntityManager
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\ServicePointValidatorInterface $servicePointValidator
-     * @param \Spryker\Zed\ServicePoint\Business\Filter\ServicePointFilterInterface $servicePointFilter
-     */
     public function __construct(
         ServicePointStoreRelationUpdaterInterface $servicePointStoreRelationUpdater,
         ServicePointEntityManagerInterface $servicePointEntityManager,
@@ -58,11 +52,6 @@ class ServicePointUpdater implements ServicePointUpdaterInterface
         $this->servicePointFilter = $servicePointFilter;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCollectionRequestTransfer $servicePointCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointCollectionResponseTransfer
-     */
     public function updateServicePointCollection(
         ServicePointCollectionRequestTransfer $servicePointCollectionRequestTransfer
     ): ServicePointCollectionResponseTransfer {
@@ -115,11 +104,6 @@ class ServicePointUpdater implements ServicePointUpdaterInterface
         return $persistedServicePointTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCollectionRequestTransfer $servicePointCollectionRequestTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredFields(ServicePointCollectionRequestTransfer $servicePointCollectionRequestTransfer): void
     {
         $servicePointCollectionRequestTransfer
@@ -138,11 +122,6 @@ class ServicePointUpdater implements ServicePointUpdaterInterface
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreRelationTransfer $storeRelationTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredStoreRelationFields(StoreRelationTransfer $storeRelationTransfer): void
     {
         $storeRelationTransfer->requireStores();

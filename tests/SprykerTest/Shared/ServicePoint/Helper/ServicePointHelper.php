@@ -175,12 +175,6 @@ class ServicePointHelper extends Module
         return $serviceTransfer;
     }
 
-    /**
-     * @param int $idServicePoint
-     * @param int $idStore
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     protected function createServicePointStore(
         int $idServicePoint,
         int $idStore
@@ -203,11 +197,6 @@ class ServicePointHelper extends Module
         );
     }
 
-    /**
-     * @param int $idServicePoint
-     *
-     * @return void
-     */
     protected function deleteServicePoint(int $idServicePoint): void
     {
         $servicePointEntity = $this->getServicePointQuery()->findOneByIdServicePoint($idServicePoint);
@@ -220,11 +209,6 @@ class ServicePointHelper extends Module
         }
     }
 
-    /**
-     * @param int $idServicePointAddress
-     *
-     * @return void
-     */
     protected function deleteServicePointAddress(int $idServicePointAddress): void
     {
         $servicePointAddressEntity = $this->getServicePointAddressQuery()->findOneByIdServicePointAddress($idServicePointAddress);
@@ -234,11 +218,6 @@ class ServicePointHelper extends Module
         }
     }
 
-    /**
-     * @param int $idServicePointStore
-     *
-     * @return void
-     */
     protected function deleteServicePointStore(int $idServicePointStore): void
     {
         $servicePointStoreEntity = $this->getServicePointStoreQuery()->findOneByIdServicePointStore($idServicePointStore);
@@ -248,11 +227,6 @@ class ServicePointHelper extends Module
         }
     }
 
-    /**
-     * @param int $idServiceType
-     *
-     * @return void
-     */
     protected function deleteServiceType(int $idServiceType): void
     {
         $serviceTypeEntity = $this->getServiceTypeQuery()
@@ -263,11 +237,6 @@ class ServicePointHelper extends Module
         }
     }
 
-    /**
-     * @param int $idService
-     *
-     * @return void
-     */
     protected function deleteService(int $idService): void
     {
         $serviceEntity = $this->getServiceQuery()
@@ -278,41 +247,26 @@ class ServicePointHelper extends Module
         }
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServicePointQuery
-     */
     protected function getServicePointQuery(): SpyServicePointQuery
     {
         return SpyServicePointQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServicePointAddressQuery
-     */
     protected function getServicePointAddressQuery(): SpyServicePointAddressQuery
     {
         return SpyServicePointAddressQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServicePointStoreQuery
-     */
     protected function getServicePointStoreQuery(): SpyServicePointStoreQuery
     {
         return SpyServicePointStoreQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServiceTypeQuery
-     */
     protected function getServiceTypeQuery(): SpyServiceTypeQuery
     {
         return SpyServiceTypeQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ServicePoint\Persistence\SpyServiceQuery
-     */
     protected function getServiceQuery(): SpyServiceQuery
     {
         return SpyServiceQuery::create();

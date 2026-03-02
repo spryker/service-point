@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\ServicePointAddressCollectionTransfer;
 
 interface CountryExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressCollectionTransfer $servicePointAddressCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointAddressCollectionTransfer
-     */
     public function expandServicePointAddressCollectionWithCountriesAndRegions(
         ServicePointAddressCollectionTransfer $servicePointAddressCollectionTransfer
     ): ServicePointAddressCollectionTransfer;

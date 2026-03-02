@@ -32,10 +32,6 @@ class KeyExistenceServicePointValidatorRule implements ServicePointValidatorRule
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface $servicePointRepository
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(
         ServicePointRepositoryInterface $servicePointRepository,
         ErrorAdderInterface $errorAdder
@@ -66,11 +62,6 @@ class KeyExistenceServicePointValidatorRule implements ServicePointValidatorRule
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     *
-     * @return bool
-     */
     protected function hasServicePoint(ServicePointTransfer $servicePointTransfer): bool
     {
         $servicePointConditionsTransfer = (new ServicePointConditionsTransfer())

@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ServiceTypeCollectionResponseTransfer;
 
 interface ServiceTypeCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTypeCollectionRequestTransfer $serviceTypeCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceTypeCollectionResponseTransfer
-     */
     public function createServiceTypeCollection(
         ServiceTypeCollectionRequestTransfer $serviceTypeCollectionRequestTransfer
     ): ServiceTypeCollectionResponseTransfer;

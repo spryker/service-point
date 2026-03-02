@@ -23,11 +23,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class ServicePointEntityManager extends AbstractEntityManager implements ServicePointEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointTransfer
-     */
     public function createServicePoint(ServicePointTransfer $servicePointTransfer): ServicePointTransfer
     {
         $servicePointEntity = $this->getFactory()
@@ -41,11 +36,6 @@ class ServicePointEntityManager extends AbstractEntityManager implements Service
             ->mapServicePointEntityToServicePointTransfer($servicePointEntity, $servicePointTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressTransfer $servicePointAddressTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointAddressTransfer
-     */
     public function createServicePointAddress(ServicePointAddressTransfer $servicePointAddressTransfer): ServicePointAddressTransfer
     {
         $servicePointAddressEntity = $this->getFactory()
@@ -59,11 +49,6 @@ class ServicePointEntityManager extends AbstractEntityManager implements Service
             ->mapServicePointAddressEntityToServicePointAddressTransfer($servicePointAddressEntity, $servicePointAddressTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointTransfer $servicePointTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointTransfer
-     */
     public function updateServicePoint(ServicePointTransfer $servicePointTransfer): ServicePointTransfer
     {
         $servicePointEntity = $this->getFactory()
@@ -86,11 +71,6 @@ class ServicePointEntityManager extends AbstractEntityManager implements Service
             ->mapServicePointEntityToServicePointTransfer($servicePointEntity, $servicePointTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointAddressTransfer $servicePointAddressTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointAddressTransfer
-     */
     public function updateServicePointAddress(ServicePointAddressTransfer $servicePointAddressTransfer): ServicePointAddressTransfer
     {
         $servicePointAddressEntity = $this->getFactory()
@@ -147,11 +127,6 @@ class ServicePointEntityManager extends AbstractEntityManager implements Service
         $servicePointStoreCollection->delete();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTransfer $serviceTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceTransfer
-     */
     public function createService(ServiceTransfer $serviceTransfer): ServiceTransfer
     {
         $serviceMapper = $this->getFactory()->createServiceMapper();
@@ -168,11 +143,6 @@ class ServicePointEntityManager extends AbstractEntityManager implements Service
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTransfer $serviceTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceTransfer
-     */
     public function updateService(ServiceTransfer $serviceTransfer): ServiceTransfer
     {
         $serviceMapper = $this->getFactory()->createServiceMapper();
@@ -194,11 +164,6 @@ class ServicePointEntityManager extends AbstractEntityManager implements Service
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTypeTransfer $serviceTypeTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceTypeTransfer
-     */
     public function createServiceType(ServiceTypeTransfer $serviceTypeTransfer): ServiceTypeTransfer
     {
         $serviceTypeMapper = $this->getFactory()->createServiceTypeMapper();
@@ -215,11 +180,6 @@ class ServicePointEntityManager extends AbstractEntityManager implements Service
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTypeTransfer $serviceTypeTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServiceTypeTransfer
-     */
     public function updateServiceType(ServiceTypeTransfer $serviceTypeTransfer): ServiceTypeTransfer
     {
         $serviceTypeMapper = $this->getFactory()->createServiceTypeMapper();

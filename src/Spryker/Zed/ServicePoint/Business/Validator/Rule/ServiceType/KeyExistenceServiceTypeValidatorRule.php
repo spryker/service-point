@@ -32,10 +32,6 @@ class KeyExistenceServiceTypeValidatorRule implements ServiceTypeValidatorRuleIn
      */
     protected ErrorAdderInterface $errorAdder;
 
-    /**
-     * @param \Spryker\Zed\ServicePoint\Persistence\ServicePointRepositoryInterface $servicePointRepository
-     * @param \Spryker\Zed\ServicePoint\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(
         ServicePointRepositoryInterface $servicePointRepository,
         ErrorAdderInterface $errorAdder
@@ -66,11 +62,6 @@ class KeyExistenceServiceTypeValidatorRule implements ServiceTypeValidatorRuleIn
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ServiceTypeTransfer $serviceTypeTransfer
-     *
-     * @return bool
-     */
     protected function hasServiceTypeWithKey(ServiceTypeTransfer $serviceTypeTransfer): bool
     {
         $serviceTypeConditionsTransfer = (new ServiceTypeConditionsTransfer())->addKey($serviceTypeTransfer->getKeyOrFail());

@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ServicePointCollectionResponseTransfer;
 
 interface ServicePointUpdaterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ServicePointCollectionRequestTransfer $servicePointCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ServicePointCollectionResponseTransfer
-     */
     public function updateServicePointCollection(
         ServicePointCollectionRequestTransfer $servicePointCollectionRequestTransfer
     ): ServicePointCollectionResponseTransfer;
