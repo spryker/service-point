@@ -123,7 +123,10 @@ class GetServiceCollectionTest extends Unit
     {
         // Arrange
         $serviceTransferToExclude = $this->serviceTransfers[0];
-        $serviceTransferExpected = $this->serviceTransfers[1];
+        $expectedUuids = array_map(
+            fn (ServiceTransfer $serviceTransfer): string => $serviceTransfer->getUuidOrFail(),
+            array_slice($this->serviceTransfers, 1),
+        );
 
         $serviceConditionsTransfer = (new ServiceConditionsTransfer())
             ->addUuid($serviceTransferToExclude->getUuidOrFail())
@@ -145,14 +148,12 @@ class GetServiceCollectionTest extends Unit
 
         $this->assertNull($serviceCollectionTransfer->getPagination());
 
-        $this->assertSame(
-            $serviceTransferExpected->getUuidOrFail(),
-            $serviceCollectionTransfer
-                ->getServices()
-                ->getIterator()
-                ->current()
-                ->getUuidOrFail(),
+        $actualUuids = array_map(
+            fn (ServiceTransfer $serviceTransfer): string => $serviceTransfer->getUuidOrFail(),
+            iterator_to_array($serviceCollectionTransfer->getServices()->getIterator()),
         );
+
+        $this->assertEqualsCanonicalizing($expectedUuids, $actualUuids);
     }
 
     public function testShouldReturnServiceCollectionByIds(): void
